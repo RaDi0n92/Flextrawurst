@@ -267,3 +267,61 @@ Wichtige Dateien innerhalb des Snapshots:
 
 * `session-start/KIMI_NOTE.md`
   Kontextnotiz, wenn eine dedizierte Kimi-Startdatei fehlt.
+
+---
+
+# AI rooms snapshot / AI-Räume-Snapshot
+
+## English
+
+This repository includes a selected public AI rooms snapshot:
+
+`external-ai-streams/home-snapshots/2026-06-01-ai-rooms/`
+
+It documents the external AI stream rooms used during the Flextrawurst construction process:
+
+* `_claude`
+* `_codex`
+* `_kimi`
+* `_shared`
+
+This snapshot is not a live system, not an open-source release and not a setup guide.
+
+It is a raw public provenance snapshot.
+
+It shows how Claude, Codex and Kimi were given separate rooms, own notes, mirrors, maps, resonance fields, imported ground plans and a shared mailbox.
+
+Important rule:
+
+Imported ground plans are reference material, not memory.
+
+The shared mailbox is a neighbor channel, not a task queue.
+
+Resonance fields are generated orientation bodies, not primary sources.
+
+## Deutsch
+
+Dieses Repository enthält einen ausgewählten öffentlichen AI-Räume-Snapshot:
+
+`external-ai-streams/home-snapshots/2026-06-01-ai-rooms/`
+
+Er dokumentiert die Räume externer AI-Ströme im Flextrawurst-Bauprozess:
+
+* `_claude`
+* `_codex`
+* `_kimi`
+* `_shared`
+
+Dieser Snapshot ist kein Live-System, kein Open-Source-Release und keine Setup-Anleitung.
+
+Er ist ein roher öffentlicher Provenienz-Snapshot.
+
+Er zeigt, wie Claude, Codex und Kimi getrennte Räume, eigene Notizen, Spiegel, Karten, Resonanzfelder, importierte Grundrisse und einen gemeinsamen Briefkasten bekommen haben.
+
+Wichtige Regel:
+
+Importierte Grundrisse sind Referenzmaterial, nicht Erinnerung.
+
+Der gemeinsame Briefkasten ist ein Nachbarschaftskanal, keine Aufgabenliste.
+
+Resonanzfelder sind generierte Orientierungskörper, keine Primärquellen.
