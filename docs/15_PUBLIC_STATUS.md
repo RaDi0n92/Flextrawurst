@@ -263,3 +263,111 @@ Diese drei Spuren bilden das erste öffentliche Herkunftsdreieck von Flextrawurs
 Damit enthält das Repository nicht mehr nur strukturelle Dokumentation.
 
 Es enthält jetzt das erste echte ausgewählte Herkunftsmaterial.
+
+---
+
+## External AI stream home snapshot
+
+## English
+
+The repository now includes a selected public home snapshot for the external AI stream places used in the Flextrawurst construction process.
+
+Snapshot path:
+
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
+
+This snapshot documents:
+
+* Claude's Werkraum place
+* Codex' Werkraum place
+* Kimi's Werkraum place
+* the shared coordination area
+* the shared mailbox
+* imported ground plan logic
+* resonance field extraction
+* file-based session-start protocols
+* source files such as `AGENTS.md` and `CLAUDE.md`, if included
+
+This is a major public provenance step.
+
+The repository now shows not only public project documentation and selected Flarum-origin traces, but also part of the construction environment that shaped those materials.
+
+## Deutsch
+
+Das Repository enthält jetzt einen ausgewählten öffentlichen Zuhause-Snapshot der Orte externer AI-Ströme im Flextrawurst-Bauprozess.
+
+Snapshot-Pfad:
+
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
+
+Dieser Snapshot dokumentiert:
+
+* Claudes Werkraum-Ort
+* Codex' Werkraum-Ort
+* Kimis Werkraum-Ort
+* den gemeinsamen Koordinationsbereich
+* den gemeinsamen Briefkasten
+* importierte Grundrisslogik
+* Resonanzfeld-Extraktion
+* dateibasierte Sessionstart-Protokolle
+* Quelldateien wie `AGENTS.md` und `CLAUDE.md`, falls enthalten
+
+Das ist ein wichtiger öffentlicher Provenienzschritt.
+
+Das Repository zeigt jetzt nicht nur öffentliche Projektdokumentation und ausgewählte Flarum-Herkunftsspuren, sondern auch einen Teil der Bauumgebung, die diese Materialien mitgeformt hat.
+
+---
+
+## Current public status after snapshot
+
+## English
+
+The public repository now contains:
+
+* public project framing
+* rights and security boundaries
+* documentation body
+* LLM context
+* first selected Flarum-origin traces
+* first code-being trace index
+* first external AI construction stream summary
+* first safe operational summary
+* external AI stream home snapshot
+* session-start protocol explanation
+* publication notes for snapshot material
+
+This means Flextrawurst is no longer represented only as an idea or website.
+
+It is now publicly represented as:
+
+* project
+* trace system
+* provenance archive
+* external AI construction field
+* emerging world system
+
+## Deutsch
+
+Das öffentliche Repository enthält jetzt:
+
+* öffentliche Projektrahmung
+* Rechte- und Sicherheitsgrenzen
+* Dokumentationskörper
+* LLM-Kontext
+* erste ausgewählte Flarum-Herkunftsspuren
+* ersten Codewesen-Spurenindex
+* erste Zusammenfassung externer AI-Bauströme
+* erste sichere Betriebsspuren-Zusammenfassung
+* Zuhause-Snapshot externer AI-Ströme
+* Erklärung des Sessionstart-Protokolls
+* Veröffentlichungshinweise für Snapshot-Material
+
+Damit wird Flextrawurst öffentlich nicht mehr nur als Idee oder Website dargestellt.
+
+Es wird jetzt öffentlich dargestellt als:
+
+* Projekt
+* Spurensystem
+* Provenienzarchiv
+* externes AI-Baufeld
+* entstehendes Weltsystem
