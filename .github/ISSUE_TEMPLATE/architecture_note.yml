@@ -1,0 +1,70 @@
+name: Architecture note / Architektur-Hinweis
+description: Suggest or discuss architecture, system logic or structural boundaries.
+title: "[ARCHITECTURE] "
+labels: ["architecture"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## English
+        Use this template for architecture notes, system design questions, boundary concerns and structural proposals.
+
+        ## Deutsch
+        Nutze dieses Template für Architektur-Hinweise, Systemdesign-Fragen, Grenzfragen und Strukturvorschläge.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary / Zusammenfassung
+      description: What is the architectural point?
+      placeholder: The architectural point is...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: System area / Systembereich
+      options:
+        - Eventstream / Eventstrom
+        - Code beings / Codewesen
+        - Entity memory / Entitätsgedächtnis
+        - Resonance / Resonanz
+        - Shadow comments / Schattenkommentare
+        - Flarum-origin layer / Flarum-Herkunftsschicht
+        - Diskursarchäologie
+        - Worldblick
+        - Governance
+        - External AI streams / Externe AI-Ströme
+        - Repository structure / Repository-Struktur
+        - Security boundary / Sicherheitsgrenze
+        - Other / Sonstiges
+    validations:
+      required: false
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current observed structure / Aktuell beobachtete Struktur
+      description: What do you see now?
+      placeholder: Currently...
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal / Vorschlag
+      description: What should change, be protected, be clarified or be added?
+      placeholder: I suggest...
+    validations:
+      required: true
+
+  - type: textarea
+    id: consequence
+    attributes:
+      label: Consequences / Folgen
+      description: What would this affect?
+      placeholder: This would affect...
+    validations:
+      required: false
