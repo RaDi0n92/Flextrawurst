@@ -1,0 +1,136 @@
+# Flextrawurst .gitignore
+
+# Public repository safety layer.
+
+# This file blocks common secrets, local state, caches, databases, logs and machine-specific files.
+
+# Environment / secrets
+
+.env
+.env.*
+*.env
+*.key
+*.pem
+*.crt
+*.cert
+*.p12
+*.pfx
+*.token
+*.secret
+secrets/
+private/
+credentials/
+config/secrets/
+config/private/
+
+# Python
+
+**pycache**/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Node / frontend
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.next/
+.nuxt/
+.svelte-kit/
+vite.config.*.timestamp-*
+*.tsbuildinfo
+
+# Logs
+
+*.log
+logs/
+journal/
+journalctl/
+systemd-dumps/
+debug/
+tmp/
+temp/
+
+# Databases / local storage
+
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.dump
+*.sql
+*.bak
+*.backup
+chroma/
+chromadb/
+vectorstore/
+storage/
+data/private/
+data/local/
+
+# OS / editor
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# VPS / machine-specific traces
+
+/root/
+home/
+etc/
+var/
+srv/
+opt/
+nginx-sites/
+systemd-units-private/
+ufw/
+ssh/
+.ssh/
+
+# Large generated exports
+
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# Media / generated artifacts
+
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# Keep public trace folders intentional.
+
+# If logs, exports or entity traces are meant to be public, place curated versions in:
+
+# traces/
+
+# docs/
+
+# entities/
+
+# tools/
