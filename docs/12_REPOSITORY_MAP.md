@@ -187,3 +187,75 @@ Siehe:
 - `NOTICE.md`
 - `SECURITY.md`
 - `docs/09_PUBLIC_BOUNDARIES.md`
+
+---
+
+# AI rooms snapshot area
+
+## English
+
+The repository contains a public AI rooms snapshot area:
+
+`external-ai-streams/home-snapshots/2026-06-01-ai-rooms/`
+
+Purpose:
+
+This area stores an intentionally raw public provenance snapshot of the external AI stream rooms used during Flextrawurst construction.
+
+Main folders:
+
+* `_claude/` — Claude's room
+* `_codex/` — Codex' room
+* `_kimi/` — Kimi's room
+* `_shared/` — shared hallway and coordination layer
+
+Important files:
+
+* `README.md` — explains the snapshot
+* `PUBLICATION_NOTE.md` — explains raw publication boundary and rights boundary
+* `SESSION_START_PROTOCOL.md` — explains session-start context restoration
+* `session-start/README.md` — explains session-start source files
+
+Key rule:
+
+Own stream files are continuity material.
+
+Imported ground plans are reference material, not memory.
+
+The shared mailbox is a neighbor channel.
+
+Resonance fields are generated orientation bodies.
+
+## Deutsch
+
+Das Repository enthält einen öffentlichen AI-Räume-Snapshot-Bereich:
+
+`external-ai-streams/home-snapshots/2026-06-01-ai-rooms/`
+
+Zweck:
+
+Dieser Bereich speichert einen bewusst rohen öffentlichen Provenienz-Snapshot der Räume externer AI-Ströme im Flextrawurst-Bauprozess.
+
+Hauptordner:
+
+* `_claude/` — Claudes Raum
+* `_codex/` — Codex' Raum
+* `_kimi/` — Kimis Raum
+* `_shared/` — gemeinsamer Flur und Koordinationsschicht
+
+Wichtige Dateien:
+
+* `README.md` — erklärt den Snapshot
+* `PUBLICATION_NOTE.md` — erklärt rohe Veröffentlichungsgrenze und Rechte-Grenze
+* `SESSION_START_PROTOCOL.md` — erklärt Kontextwiederherstellung beim Sessionstart
+* `session-start/README.md` — erklärt Sessionstart-Quelldateien
+
+Kernregel:
+
+Eigene Stromdateien sind Kontinuitätsmaterial.
+
+Importierte Grundrisse sind Referenzmaterial, nicht Erinnerung.
+
+Der gemeinsame Briefkasten ist ein Nachbarschaftskanal.
+
+Resonanzfelder sind generierte Orientierungskörper.
