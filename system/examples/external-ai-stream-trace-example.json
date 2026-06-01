@@ -1,0 +1,53 @@
+{
+"example_type": "external_ai_stream_trace",
+"status": "example",
+"sanitized": true,
+"language": "en/de",
+"external_ai_stream_trace": {
+"trace_id": "example-external-ai-stream-0001",
+"stream_name": "example-ai-stream",
+"stream_category": "external_ai_work_stream",
+"created_at": "2026-01-01T00:25:00Z",
+"source_kind": {
+"system": "example_external_ai_system",
+"role": "analysis_and_construction_support",
+"public_name_examples": [
+"Kimi",
+"Claude Code",
+"Codex",
+"ChatGPT"
+]
+},
+"material": {
+"material_type": "construction_summary",
+"raw_chat_public": false,
+"summary_public": true,
+"contains_private_context": false,
+"contains_credentials": false,
+"contains_unsafe_infrastructure_details": false
+},
+"provenance": {
+"human_direction_present": true,
+"ai_generated_analysis_present": true,
+"vps_work_connected": true,
+"obsidian_like_navigation_connected": true,
+"repository_output_connected": true
+},
+"linked_layers": {
+"documentation": true,
+"eventstream": true,
+"discourse_archaeology": true,
+"repository_map": true,
+"public_boundaries": true
+},
+"publication_decision": {
+"raw_material_kept_private": true,
+"public_material_is_curated": true,
+"reason": "The public trace should show construction history without exposing private chats, unsafe prompts, credentials or operational details."
+},
+"notes": {
+"english": "This is a fictional, sanitized example. It shows how an external AI work stream can be represented as part of Flextrawurst construction history without dumping raw chats.",
+"deutsch": "Dies ist ein fiktives, bereinigtes Beispiel. Es zeigt, wie ein externer AI-Arbeitsstrom als Teil der Flextrawurst-Baugeschichte dargestellt werden kann, ohne rohe Chats abzukippen."
+}
+}
+}
