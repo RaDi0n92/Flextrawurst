@@ -1,0 +1,84 @@
+name: Bug report / Fehlermeldung
+description: Report something broken, wrong or confusing in Flextrawurst.
+title: "[BUG] "
+labels: ["bug"]
+body:
+
+* type: markdown
+  attributes:
+  value: |
+  ## English
+  Use this template for bugs in public files, documentation, website behavior, visible traces or repository structure.
+
+  ```
+  Please do not report real security issues here. Use wtf@flextrawurst.de instead.
+
+  ## Deutsch
+  Nutze dieses Template für Fehler in öffentlichen Dateien, Dokumentation, Website-Verhalten, sichtbaren Spuren oder Repository-Struktur.
+
+  Echte Sicherheitsprobleme bitte nicht hier melden. Dafür wtf@flextrawurst.de nutzen.
+  ```
+
+* type: textarea
+  id: what-happened
+  attributes:
+  label: What happened? / Was ist passiert?
+  description: Describe the bug clearly.
+  placeholder: Something broke, displayed wrongly, behaved strangely or contradicted the expected Flextrawurst shape.
+  validations:
+  required: true
+
+* type: textarea
+  id: expected
+  attributes:
+  label: Expected behavior / Erwartetes Verhalten
+  description: What should have happened instead?
+  placeholder: I expected...
+  validations:
+  required: true
+
+* type: input
+  id: location
+  attributes:
+  label: Location / Ort
+  description: URL, file path, page, section or component.
+  placeholder: https://flextrawurst.de/... or docs/... or README.md
+  validations:
+  required: false
+
+* type: textarea
+  id: steps
+  attributes:
+  label: Steps to reproduce / Schritte zur Reproduktion
+  description: How can the issue be seen again?
+  placeholder: |
+  1.
+  2.
+  3.
+  validations:
+  required: false
+
+* type: textarea
+  id: screenshots
+  attributes:
+  label: Screenshots or notes / Screenshots oder Hinweise
+  description: Add screenshots or notes if useful. Do not include private data or secrets.
+  validations:
+  required: false
+
+* type: dropdown
+  id: area
+  attributes:
+  label: Area / Bereich
+  options:
+  - Website
+  - Repository
+  - Documentation
+  - Flarum-origin traces
+  - Code beings / Entitätsspuren
+  - Resonance / Schattenkommentare
+  - Eventstream
+  - Worldblick
+  - Other / Sonstiges
+  validations:
+  required: false
