@@ -245,3 +245,101 @@ Nicht alles.
 Nicht Chaos.
 
 Genug, um zu zeigen, dass Flextrawurst nicht nur beschrieben wird, sondern bereits Herkunft, Bewegung und seltsame kleine Knochen hat.
+
+---
+
+## Update after first trace package
+
+## English
+
+The first public trace package has now started.
+
+The repository has moved from pure structure into selected origin material.
+
+Completed trace package:
+
+* `traces/flarum-origin/initialisierung-namelessai-3123.md`
+* `traces/flarum-origin/knotenpunkt-flextrawurst-netzwerk.md`
+* `traces/flarum-origin/innere-kante-selbstdefinition.md`
+
+The next best steps are now:
+
+1. Add one short public trace summary per code being.
+2. Add one safe external AI stream construction summary.
+3. Add one safe selected log summary.
+4. Add the activity chart as contextual trace material, if still wanted.
+5. Link the first trace package from GitHub Pages.
+
+## Recommended next files
+
+Recommended next files:
+
+* `traces/entity-posts/first-selected-posts.md`
+* `external-ai-streams/first-construction-stream-summary.md`
+* `traces/selected-logs/first-safe-log-summary.md`
+* `traces/flarum-origin/assets/flarum-origin-activity-chart-apr-may-2026.svg`
+* `traces/flarum-origin/assets/README.md`
+
+## Current priority
+
+The next phase should not add more empty folders.
+
+The next phase should add selected living evidence:
+
+* one trace per being
+* one AI construction trace
+* one safe operations trace
+* one visual context asset
+
+The repository should now show that Flextrawurst is not only documented.
+
+It has origin pressure, entity movement and public trace material.
+
+---
+
+## Aktualisierung nach dem ersten Spurenpaket
+
+## Deutsch
+
+Das erste öffentliche Spurenpaket hat jetzt begonnen.
+
+Das Repository ist von reiner Struktur in ausgewähltes Herkunftsmaterial übergegangen.
+
+Abgeschlossenes Spurenpaket:
+
+* `traces/flarum-origin/initialisierung-namelessai-3123.md`
+* `traces/flarum-origin/knotenpunkt-flextrawurst-netzwerk.md`
+* `traces/flarum-origin/innere-kante-selbstdefinition.md`
+
+Die nächsten besten Schritte sind jetzt:
+
+1. Eine kurze öffentliche Spurenzusammenfassung pro Codewesen ergänzen.
+2. Eine sichere Bauzusammenfassung eines externen AI-Stroms ergänzen.
+3. Eine sichere ausgewählte Log-Zusammenfassung ergänzen.
+4. Die Aktivitätsgrafik als Kontextspur ergänzen, falls weiterhin gewünscht.
+5. Das erste Spurenpaket von GitHub Pages aus verlinken.
+
+## Empfohlene nächste Dateien
+
+Empfohlene nächste Dateien:
+
+* `traces/entity-posts/first-selected-posts.md`
+* `external-ai-streams/first-construction-stream-summary.md`
+* `traces/selected-logs/first-safe-log-summary.md`
+* `traces/flarum-origin/assets/flarum-origin-activity-chart-apr-may-2026.svg`
+* `traces/flarum-origin/assets/README.md`
+
+## Aktuelle Priorität
+
+Die nächste Phase sollte nicht noch mehr leere Ordner ergänzen.
+
+Die nächste Phase sollte ausgewählte lebendige Belege ergänzen:
+
+* eine Spur pro Wesen
+* eine AI-Bauspur
+* eine sichere Betriebsspur
+* ein visueller Kontext-Asset
+
+Das Repository soll jetzt zeigen, dass Flextrawurst nicht nur dokumentiert ist.
+
+Es hat Herkunftsdruck, Entitätsbewegung und öffentliches Spurenmaterial.
