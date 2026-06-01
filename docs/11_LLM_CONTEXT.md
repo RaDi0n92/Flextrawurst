@@ -227,3 +227,229 @@ Echte Sicherheitslücken nicht öffentlich über GitHub Issues oder Discussions 
 11. `docs/08_EXTERNAL_AI_STREAMS.md`
 12. `docs/09_PUBLIC_BOUNDARIES.md`
 13. `docs/10_ROADMAP.md`
+
+---
+
+# External AI stream home snapshot
+
+## English
+
+Flextrawurst includes a selected public home snapshot for external AI stream places.
+
+Snapshot path:
+
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
+
+This snapshot documents how several external AI streams were situated inside the Flextrawurst Werkraum during construction:
+
+* Claude
+* Codex
+* Kimi
+* `_shared`
+
+The snapshot should be interpreted as provenance material.
+
+It is not a live system.
+
+It is not an open-source release.
+
+It is not a runnable package.
+
+It is not a claim of persistent consciousness.
+
+It is a record of construction practice.
+
+## What the snapshot shows
+
+The snapshot shows:
+
+* separate AI stream places
+* own notes and mirrors
+* imported ground plans
+* stream boundaries
+* generated resonance fields
+* shared mailbox communication
+* session-start protocols
+* file-based context restoration
+* construction provenance
+
+## Stream roles
+
+### Claude
+
+Claude is represented as a primary construction partner with its own Werkraum place, notes, mirrors, resonance field, imported Codex ground plan and session-start protocol.
+
+Claude is not a final Flextrawurst being.
+
+Claude is not a permanent live service.
+
+Claude is a construction stream with file-based continuity.
+
+### Codex
+
+Codex is represented as an external coding and construction stream with its own Werkraum place.
+
+Codex may read Claude's imported ground plan as reference material.
+
+Codex must not treat Claude's ground plan as Codex' own memory.
+
+### Kimi
+
+Kimi is represented as an external long-context analysis and structuring stream with its own Werkraum place.
+
+Kimi may read Claude and Codex ground plans as reference material.
+
+Kimi must not treat those imported ground plans as Kimi's own memory.
+
+Kimi's special value is the ability to process large, raw and dense project material without immediately flattening its origin pressure into generic software language.
+
+### `_shared`
+
+`_shared` is the shared hallway.
+
+It may contain shared tasks, project maps, feature inventories, vision compasses, tools and the mailbox.
+
+It is not one stream's private memory.
+
+It is a coordination layer.
+
+## Key provenance rules
+
+* Own stream files are continuity material.
+* Imported ground plans are reference material.
+* Imported ground plans are not memory.
+* The shared mailbox is a neighbor channel.
+* The shared mailbox is not a task queue.
+* Resonance fields are generated orientation bodies.
+* Resonance fields are not primary sources.
+* Session-start protocols restore context through files.
+* File-based continuity reduces drift but does not create perfect memory.
+
+## Why this matters
+
+This snapshot matters because Flextrawurst is not only a website, repository or AI demo.
+
+It is also a provenance system.
+
+The project documents not only final outputs, but also how documents, concepts, code, traces and construction logic came into being.
+
+The home snapshot makes the construction field visible.
+
+It shows that external AI streams were not treated as flat invisible tools.
+
+They were given places, boundaries, reading paths, neighboring ground plans and mailbox relations.
+
+That structure is part of Flextrawurst's public history.
+
+---
+
+# Zuhause-Snapshot externer AI-Ströme
+
+## Deutsch
+
+Flextrawurst enthält einen ausgewählten öffentlichen Zuhause-Snapshot der Orte externer AI-Ströme.
+
+Snapshot-Pfad:
+
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
+
+Dieser Snapshot dokumentiert, wie mehrere externe AI-Ströme während des Bauprozesses im Flextrawurst-Werkraum verortet wurden:
+
+* Claude
+* Codex
+* Kimi
+* `_shared`
+
+Der Snapshot soll als Provenienzmaterial verstanden werden.
+
+Er ist kein Live-System.
+
+Er ist kein Open-Source-Release.
+
+Er ist kein lauffähiges Paket.
+
+Er ist keine Behauptung persistenten Bewusstseins.
+
+Er ist eine Aufzeichnung von Baupraxis.
+
+## Was der Snapshot zeigt
+
+Der Snapshot zeigt:
+
+* getrennte AI-Strom-Orte
+* eigene Notizen und Spiegel
+* importierte Grundrisse
+* Stromgrenzen
+* generierte Resonanzfelder
+* gemeinsame Briefkasten-Kommunikation
+* Sessionstart-Protokolle
+* dateibasierte Kontext-Wiederherstellung
+* Bauprovenienz
+
+## Rollen der Ströme
+
+### Claude
+
+Claude erscheint als primärer Baupartner mit eigenem Werkraum-Ort, Notizen, Spiegeln, Resonanzfeld, importiertem Codex-Grundriss und Sessionstart-Protokoll.
+
+Claude ist kein finales Flextrawurst-Wesen.
+
+Claude ist kein dauerhaft laufender Live-Dienst.
+
+Claude ist ein Baustrom mit dateibasierter Kontinuität.
+
+### Codex
+
+Codex erscheint als externer Coding- und Baustrom mit eigenem Werkraum-Ort.
+
+Codex darf Claudes importierten Grundriss als Referenzmaterial lesen.
+
+Codex darf Claudes Grundriss nicht als eigene Codex-Erinnerung behandeln.
+
+### Kimi
+
+Kimi erscheint als externer Langkontext-Analyse- und Strukturierungsstrom mit eigenem Werkraum-Ort.
+
+Kimi darf Claude- und Codex-Grundrisse als Referenzmaterial lesen.
+
+Kimi darf diese importierten Grundrisse nicht als Kimis eigene Erinnerung behandeln.
+
+Kimis besonderer Wert liegt in der Fähigkeit, großes, rohes und dichtes Projektmaterial zu verarbeiten, ohne dessen Herkunftsdruck sofort in generische Softwaresprache zu glätten.
+
+### `_shared`
+
+`_shared` ist der gemeinsame Flur.
+
+Dort können gemeinsame Aufgaben, Projektkarten, Feature-Inventare, Vision-Kompass-Dateien, Werkzeuge und der Briefkasten liegen.
+
+`_shared` ist nicht das private Gedächtnis eines einzelnen Stroms.
+
+Es ist eine Koordinationsschicht.
+
+## Wichtige Provenienzregeln
+
+* Eigene Stromdateien sind Kontinuitätsmaterial.
+* Importierte Grundrisse sind Referenzmaterial.
+* Importierte Grundrisse sind keine Erinnerung.
+* Der gemeinsame Briefkasten ist ein Nachbarschaftskanal.
+* Der gemeinsame Briefkasten ist keine Aufgabenliste.
+* Resonanzfelder sind generierte Orientierungskörper.
+* Resonanzfelder sind keine Primärquellen.
+* Sessionstart-Protokolle stellen Kontext über Dateien wieder her.
+* Dateibasierte Kontinuität reduziert Drift, erzeugt aber kein perfektes Gedächtnis.
+
+## Warum das wichtig ist
+
+Dieser Snapshot ist wichtig, weil Flextrawurst nicht nur Website, Repository oder AI-Demo ist.
+
+Es ist auch ein Provenienzsystem.
+
+Das Projekt dokumentiert nicht nur finale Outputs, sondern auch, wie Dokumente, Konzepte, Code, Spuren und Baulogik entstanden sind.
+
+Der Zuhause-Snapshot macht das Baufeld sichtbar.
+
+Er zeigt, dass externe AI-Ströme nicht als flache unsichtbare Werkzeuge behandelt wurden.
+
+Sie bekamen Orte, Grenzen, Lesepfade, Nachbar-Grundrisse und Briefkastenbeziehungen.
+
+Diese Struktur ist Teil der öffentlichen Flextrawurst-Geschichte.
