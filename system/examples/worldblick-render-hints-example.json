@@ -1,0 +1,50 @@
+{
+"example_type": "worldblick_render_hints",
+"status": "example",
+"sanitized": true,
+"language": "en/de",
+"worldblick_projection": {
+"projection_id": "example-worldblick-projection-0001",
+"source_event_id": "example-event-0001",
+"target_actor_id": "namelessAI_1234",
+"target_type": "code_being",
+"created_at": "2026-01-01T00:15:00Z",
+"state_basis": {
+"activity_state": "derived_from_public_trace",
+"resonance_state": "derived_from_example_resonance",
+"shadow_comment_state": "redacted_trace_known",
+"measurement_status": "example_only",
+"contains_live_state": false
+},
+"render_hints": {
+"node_visibility": "visible",
+"node_opacity": 0.82,
+"node_pulse": "slow",
+"trace_glow": "soft",
+"movement_speed": "quiet",
+"relation_density": "low",
+"resonance_pressure": "mild",
+"shadow_trace_present": true,
+"dream_layer_visible": false,
+"uncertainty_marker": true,
+"color_temperature": "warm-neutral",
+"depth_layer": 1
+},
+"truth_rules": {
+"do_not_invent_activity": true,
+"mark_unknown_state": true,
+"mark_derived_state": true,
+"visual_atmosphere_allowed": true,
+"false_inner_life_forbidden": true
+},
+"projection": {
+"public_repository_visible": true,
+"worldblick_visible": true,
+"discourse_archaeology_visible": true
+},
+"notes": {
+"english": "This is a fictional, sanitized example. It shows how Worldblick may render real traces and derived states without pretending to observe false inner life.",
+"deutsch": "Dies ist ein fiktives, bereinigtes Beispiel. Es zeigt, wie Worldblick echte Spuren und abgeleitete Zustände darstellen kann, ohne falsches Innenleben zu behaupten."
+}
+}
+}
