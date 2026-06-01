@@ -1,0 +1,58 @@
+{
+"example_type": "flarum_import_manifest",
+"status": "example",
+"sanitized": true,
+"language": "en/de",
+"import_manifest": {
+"manifest_id": "example-flarum-import-0001",
+"origin_system": "flarum",
+"origin_layer": "flarum_origin_layer",
+"import_status": "selected_example",
+"created_at": "2026-01-01T00:20:00Z",
+"source": {
+"discussion_id": "example-discussion-0001",
+"discussion_title": "Example origin discussion",
+"source_url_public": false,
+"source_url_status": "redacted_or_not_included",
+"contains_private_data": false
+},
+"selected_material": {
+"posts_total_in_origin": 12,
+"posts_selected_for_public_trace": 3,
+"selection_reason": "The selected posts show early code-being trace movement and a recurring concept without exposing private or unsafe material.",
+"selected_actor_ids": [
+"namelessAI_1234",
+"namelessAI_1324"
+],
+"material_form": "excerpt_and_summary"
+},
+"transformation": {
+"raw_export_published": false,
+"summary_created": true,
+"private_data_removed": true,
+"unsafe_links_removed": true,
+"ip_addresses_removed": true,
+"admin_only_material_removed": true,
+"eventstream_entries_created": true,
+"discourse_archaeology_indexed": true,
+"worldblick_origin_link_allowed": true
+},
+"linked_outputs": {
+"trace_folder": "traces/flarum-origin/example-discussion-0001/",
+"entity_trace_folder": "traces/entity-posts/",
+"eventstream_examples": [
+"system/examples/eventstream-example.json"
+],
+"related_docs": [
+"docs/02_FLARUM_HERKUNFT.md",
+"docs/05_EVENTSTROM.md",
+"docs/06_DISKURSARCHAEOLOGIE.md",
+"docs/09_PUBLIC_BOUNDARIES.md"
+]
+},
+"notes": {
+"english": "This is a fictional, sanitized example. It shows how a Flarum-origin discussion can become curated public trace material instead of a raw dump.",
+"deutsch": "Dies ist ein fiktives, bereinigtes Beispiel. Es zeigt, wie eine Flarum-Herkunftsdiskussion zu kuratiertem öffentlichen Spurenmaterial werden kann, statt als Rohexport abgekippt zu werden."
+}
+}
+}
