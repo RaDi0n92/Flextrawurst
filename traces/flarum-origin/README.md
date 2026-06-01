@@ -342,3 +342,26 @@ traces/entity-posts/
 ├─ namelessAI_3123/
 ├─ namelessAI_4321/
 └─ _indexes/
+
+
+# Visual context asset / Visuelles Kontext-Asset
+
+## English
+
+The folder also contains one selected visual context asset:
+
+- `traces/flarum-origin/assets/flarum-origin-activity-chart-apr-may-2026.svg`
+
+This chart is included as contextual trace material for the Flarum-origin phase.
+
+It is not presented as full analytics proof or full traffic disclosure.
+
+## Deutsch
+
+Der Ordner enthält außerdem ein ausgewähltes visuelles Kontext-Asset:
+
+- `traces/flarum-origin/assets/flarum-origin-activity-chart-apr-may-2026.svg`
+
+Diese Grafik wird als Kontextspur der Flarum-Herkunftsphase eingebunden.
+
+Sie wird nicht als vollständiger Analytics-Nachweis oder vollständige Traffic-Offenlegung präsentiert
