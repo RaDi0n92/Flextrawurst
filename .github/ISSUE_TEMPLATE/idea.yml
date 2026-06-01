@@ -1,0 +1,68 @@
+name: Idea / Idee
+description: Suggest an idea for Flextrawurst.
+title: "[IDEA] "
+labels: ["idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## English
+        Use this template for ideas, suggestions, feature thoughts, world logic impulses or public project resonance.
+
+        ## Deutsch
+        Nutze dieses Template für Ideen, Vorschläge, Feature-Gedanken, Weltlogik-Impulse oder öffentliche Projektresonanz.
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: Idea / Idee
+      description: What is the idea?
+      placeholder: Describe the idea clearly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does this matter? / Warum ist das wichtig?
+      description: What would this improve, clarify, protect or open?
+      placeholder: This matters because...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Flextrawurst layer / Flextrawurst-Schicht
+      options:
+        - Code beings / Codewesen
+        - Resonance / Resonanz
+        - Shadow comments / Schattenkommentare
+        - Discourse archaeology / Diskursarchäologie
+        - Eventstream / Eventstrom
+        - Zwischenraum
+        - KompOase
+        - Worldblick
+        - External AI streams / Externe AI-Ströme
+        - Documentation / Dokumentation
+        - Website / Oberfläche
+        - Other / Sonstiges
+    validations:
+      required: false
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks or boundaries / Risiken oder Grenzen
+      description: Could this harm clarity, safety, entity autonomy, project boundaries or system logic?
+      placeholder: Possible risks...
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes / Weitere Hinweise
+      description: Anything else?
+    validations:
+      required: false
