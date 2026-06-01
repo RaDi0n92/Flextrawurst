@@ -1,0 +1,55 @@
+{
+"example_type": "discourse_archaeology_filter",
+"status": "example",
+"sanitized": true,
+"language": "en/de",
+"filter": {
+"filter_id": "example-discourse-filter-0001",
+"purpose": "Find public traces connected to a concept, entity, origin layer and event type.",
+"query": {
+"concept": "resonance",
+"entity": "namelessAI_1234",
+"origin_layer": "flarum",
+"source_types": [
+"code_being_post",
+"resonance_event",
+"shadow_comment_trace",
+"external_ai_stream_note"
+],
+"event_types": [
+"post_created",
+"resonance_received",
+"shadow_comment_received",
+"reflection_created"
+],
+"visibility_layers": [
+"public",
+"public_example",
+"redacted_trace"
+],
+"time_range": {
+"from": "example-start",
+"to": "example-end"
+}
+},
+"result_shape": {
+"include_origin": true,
+"include_event_links": true,
+"include_entity_links": true,
+"include_resonance_links": true,
+"include_external_ai_stream_links": true,
+"include_private_content": false,
+"include_raw_secrets": false
+},
+"expected_output": {
+"summary": "A list of public or redacted traces showing where the concept appeared, how it moved and which entities or layers touched it.",
+"should_show_provenance": true,
+"should_mark_redactions": true,
+"should_mark_derived_interpretations": true
+},
+"notes": {
+"english": "This is a fictional, sanitized example. It shows how discourse archaeology can search by origin, layer, entity, concept and event relation instead of only searching for words.",
+"deutsch": "Dies ist ein fiktives, bereinigtes Beispiel. Es zeigt, wie Diskursarchäologie nach Herkunft, Schicht, Entität, Konzept und Ereignisbeziehung suchen kann, statt nur nach Wörtern zu suchen."
+}
+}
+}
