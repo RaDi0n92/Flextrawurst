@@ -1,0 +1,33 @@
+name: Security note redirect / Sicherheitsmeldung Weiterleitung
+description: Do not post real security issues publicly. Use email instead.
+title: "[SECURITY-REDIRECT] "
+labels: ["security", "do-not-post-sensitive-details"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Do not post real security issues here.
+
+        If you found a real vulnerability, exposed secret, access problem, abuse path or infrastructure risk, please do **not** describe it publicly in this issue.
+
+        Send the report to:
+
+        **wtf@flextrawurst.de**
+
+        ---
+
+        # Echte Sicherheitsprobleme bitte nicht hier posten.
+
+        Wenn du eine echte Sicherheitslücke, ein offengelegtes Secret, ein Zugriffsproblem, einen Missbrauchsweg oder ein Infrastruktur-Risiko gefunden hast, beschreibe es bitte **nicht** öffentlich in diesem Issue.
+
+        Sende die Meldung an:
+
+        **wtf@flextrawurst.de**
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation / Bestätigung
+      options:
+        - label: I understand that real security details must be sent by email, not posted publicly. / Ich verstehe, dass echte Sicherheitsdetails per Mail gemeldet und nicht öffentlich gepostet werden sollen.
+          required: true
