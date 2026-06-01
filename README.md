@@ -144,3 +144,64 @@ Bitte zuerst Issues und Discussions nutzen.
 
 Sicherheitskontakt: [wtf@flextrawurst.de](mailto:wtf@flextrawurst.de)
 
+---
+
+## Documentation map / Dokumentationskarte
+
+**English**
+
+The public documentation body is organized here:
+
+* `docs/00_START_HERE.md` — entry point and reading order
+* `docs/01_FLEXTRAWURST.md` — project overview
+* `docs/02_FLARUM_HERKUNFT.md` — Flarum origin layer
+* `docs/03_CODEWESEN.md` — code beings and entity traces
+* `docs/04_RESONANZ_SCHATTENKOMMENTARE.md` — resonance and shadow comments
+* `docs/05_EVENTSTROM.md` — eventstream logic
+* `docs/06_DISKURSARCHAEOLOGIE.md` — discourse archaeology
+* `docs/07_WORLDBLICK.md` — world view / Worldblick
+* `docs/08_EXTERNAL_AI_STREAMS.md` — Kimi, Claude Code, Codex, ChatGPT and other external AI streams
+* `docs/09_PUBLIC_BOUNDARIES.md` — public/private publication boundaries
+* `docs/10_ROADMAP.md` — public roadmap
+* `docs/11_LLM_CONTEXT.md` — compact context for language models and crawlers
+* `docs/12_REPOSITORY_MAP.md` — repository structure map
+* `docs/13_PUBLICATION_CHECKLIST.md` — checklist before publishing new material
+* `docs/14_TRACE_PUBLICATION_PLAN.md` — plan for publishing selected traces
+
+Main structural folders:
+
+* `entities/` — public entity trace anchors
+* `traces/` — selected public trace material
+* `system/` — selected public system material
+* `tools/` — selected public tools
+* `external-ai-streams/` — selected public traces of external AI work streams
+
+---
+
+**Deutsch**
+
+Der öffentliche Dokumentationskörper ist hier geordnet:
+
+* `docs/00_START_HERE.md` — Einstieg und Lesereihenfolge
+* `docs/01_FLEXTRAWURST.md` — Projektüberblick
+* `docs/02_FLARUM_HERKUNFT.md` — Flarum-Herkunftsschicht
+* `docs/03_CODEWESEN.md` — Codewesen und Entitätsspuren
+* `docs/04_RESONANZ_SCHATTENKOMMENTARE.md` — Resonanz und Schattenkommentare
+* `docs/05_EVENTSTROM.md` — Eventstrom-Logik
+* `docs/06_DISKURSARCHAEOLOGIE.md` — Diskursarchäologie
+* `docs/07_WORLDBLICK.md` — Weltansicht / Worldblick
+* `docs/08_EXTERNAL_AI_STREAMS.md` — Kimi, Claude Code, Codex, ChatGPT und andere externe AI-Ströme
+* `docs/09_PUBLIC_BOUNDARIES.md` — Grenzen zwischen öffentlich und privat
+* `docs/10_ROADMAP.md` — öffentliche Roadmap
+* `docs/11_LLM_CONTEXT.md` — kompakter Kontext für Sprachmodelle und Crawler
+* `docs/12_REPOSITORY_MAP.md` — Repository-Strukturkarte
+* `docs/13_PUBLICATION_CHECKLIST.md` — Checkliste vor Veröffentlichung neuer Materialien
+* `docs/14_TRACE_PUBLICATION_PLAN.md` — Plan für Veröffentlichung ausgewählter Spuren
+
+Wichtige Strukturordner:
+
+* `entities/` — öffentliche Entitätsspuranker
+* `traces/` — ausgewähltes öffentliches Spurenmaterial
+* `system/` — ausgewähltes öffentliches Systemmaterial
+* `tools/` — ausgewählte öffentliche Werkzeuge
+* `external-ai-streams/` — ausgewählte öffentliche Spuren externer AI-Arbeitsströme
