@@ -371,3 +371,71 @@ Es wird jetzt öffentlich dargestellt als:
 * Provenienzarchiv
 * externes AI-Baufeld
 * entstehendes Weltsystem
+
+---
+
+## AI rooms snapshot
+
+## English
+
+The repository now includes a selected public AI rooms snapshot.
+
+Snapshot path:
+
+`external-ai-streams/home-snapshots/2026-06-01-ai-rooms/`
+
+This snapshot documents:
+
+* Claude's room: `_claude`
+* Codex' room: `_codex`
+* Kimi's room: `_kimi`
+* shared hallway: `_shared`
+
+This is a major public provenance step.
+
+The repository now shows not only project documentation and selected Flarum-origin traces, but also part of the external AI construction environment that shaped Flextrawurst.
+
+The snapshot is intentionally raw.
+
+Names, paths, rough notes, philosophical conversations, imported ground plans, resonance fields and mailbox messages may remain visible as provenance material.
+
+Hard red lines remain:
+
+* no real passwords
+* no real API keys
+* no private keys
+* no access tokens
+* no session cookies
+* no `.env` secrets
+
+## Deutsch
+
+Das Repository enthält jetzt einen ausgewählten öffentlichen AI-Räume-Snapshot.
+
+Snapshot-Pfad:
+
+`external-ai-streams/home-snapshots/2026-06-01-ai-rooms/`
+
+Dieser Snapshot dokumentiert:
+
+* Claudes Raum: `_claude`
+* Codex' Raum: `_codex`
+* Kimis Raum: `_kimi`
+* gemeinsamer Flur: `_shared`
+
+Das ist ein wichtiger öffentlicher Provenienzschritt.
+
+Das Repository zeigt jetzt nicht nur Projektdokumentation und ausgewählte Flarum-Herkunftsspuren, sondern auch einen Teil der externen AI-Bauumgebung, die Flextrawurst mitgeformt hat.
+
+Der Snapshot ist bewusst roh.
+
+Namen, Pfade, raue Notizen, philosophische Gespräche, importierte Grundrisse, Resonanzfelder und Briefkasten-Nachrichten dürfen als Provenienzmaterial sichtbar bleiben.
+
+Harte rote Linien bleiben:
+
+* keine echten Passwörter
+* keine echten API-Keys
+* keine privaten Schlüssel
+* keine Zugriffstokens
+* keine Session-Cookies
+* keine `.env`-Secrets
