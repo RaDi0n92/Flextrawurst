@@ -76,3 +76,87 @@ See NOTICE.md for rights and restrictions.
 Do not report real security issues publicly.
 
 Security contact: [wtf@flextrawurst.de](mailto:wtf@flextrawurst.de)
+
+---
+
+## External AI stream home snapshot / Zuhause-Snapshot externer AI-Ströme
+
+The repository includes a selected public home snapshot for the external AI stream places used during Flextrawurst construction.
+
+Path:
+
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
+
+Important files:
+
+* `external-ai-streams/home-snapshots/2026-06-01-ihre-orte/README.md`
+* `external-ai-streams/home-snapshots/2026-06-01-ihre-orte/PUBLICATION_NOTE.md`
+* `external-ai-streams/home-snapshots/2026-06-01-ihre-orte/SESSION_START_PROTOCOL.md`
+* `external-ai-streams/home-snapshots/2026-06-01-ihre-orte/session-start/README.md`
+* `external-ai-streams/home-snapshots/2026-06-01-ihre-orte/session-start/AGENTS.md`
+* `external-ai-streams/home-snapshots/2026-06-01-ihre-orte/session-start/CLAUDE.md`
+* `external-ai-streams/home-snapshots/2026-06-01-ihre-orte/session-start/KIMI_NOTE.md`
+
+Interpretation:
+
+This snapshot is a public provenance artifact.
+
+It documents the Werkraum places of Claude, Codex, Kimi and `_shared`.
+
+It is not a live system.
+
+It is not an open-source release.
+
+It is not a deployment guide.
+
+It shows how external AI streams were situated through:
+
+* own notes
+* imported ground plans
+* session-start protocols
+* resonance fields
+* shared mailbox messages
+* file-based continuity
+* stream boundary rules
+
+Important distinction:
+
+* Own notes are continuity material for the stream.
+* Imported ground plans are reference material, not memory.
+* The shared mailbox is a neighbor channel, not a task queue.
+* Resonance fields are generated orientation bodies, not primary sources.
+
+Deutsch:
+
+Das Repository enthält einen ausgewählten öffentlichen Zuhause-Snapshot der Orte externer AI-Ströme im Flextrawurst-Bauprozess.
+
+Pfad:
+
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
+
+Dieser Snapshot ist ein öffentliches Provenienzartefakt.
+
+Er dokumentiert die Werkraum-Orte von Claude, Codex, Kimi und `_shared`.
+
+Er ist kein Live-System.
+
+Er ist kein Open-Source-Release.
+
+Er ist keine Deployment-Anleitung.
+
+Er zeigt, wie externe AI-Ströme verortet wurden durch:
+
+* eigene Notizen
+* importierte Grundrisse
+* Sessionstart-Protokolle
+* Resonanzfelder
+* gemeinsame Briefkasten-Nachrichten
+* dateibasierte Kontinuität
+* Stromgrenzen-Regeln
+
+Wichtige Unterscheidung:
+
+* Eigene Notizen sind Kontinuitätsmaterial des jeweiligen Stroms.
+* Importierte Grundrisse sind Referenzmaterial, nicht Erinnerung.
+* Der gemeinsame Briefkasten ist ein Nachbarschaftskanal, keine Aufgabenliste.
+* Resonanzfelder sind generierte Orientierungskörper, keine Primärquellen.
