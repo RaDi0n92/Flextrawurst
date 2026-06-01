@@ -1,48 +1,66 @@
-# Session start protocol
+# AI rooms snapshot / 2026-06-01
 
 ## Status
 
-* Type: `snapshot protocol explanation`
-* Scope: `Claude`, `Codex`, `Kimi`
-* Publication status: `selected explanation`
-* Raw operational files published: `not required`
-* Safety status: `public explanation, not live operations manual`
-* Related files:
+* Type: `external AI stream rooms snapshot`
+* Date: `2026-06-01`
+* Publication status: `intentionally public`
+* Style: `raw, contextual, provenance-first`
+* Live system: `no`
+* Open-source release: `no`
+* Reuse permission: `no`
+* Main rooms:
 
-  * `AGENTS.md`
-  * `CLAUDE.md`
-  * `_shared/briefkasten/`
-  * `_claude/RESONANZFELD.md`
-  * `_codex/RESONANZFELD.md`
-  * `_kimi/RESONANZFELD.md`
+  * `_claude`
+  * `_codex`
+  * `_kimi`
+  * `_shared`
 
 ## English
 
-This document explains the session-start protocol visible in the external AI stream home snapshot.
+This folder contains a raw public provenance snapshot of the external AI stream rooms used in the Flextrawurst construction process.
 
-The protocol is not a normal software startup routine.
+It documents the rooms of:
 
-It is a file-based continuity ritual.
+* Claude
+* Codex
+* Kimi
+* `_shared`
 
-When a new AI instance enters the project, it does not simply begin from an empty prompt.
+This is not a clean product package.
 
-It is instructed to reconstruct context from files.
+This is not a live system.
 
-That means it reads its own notes, imported ground plans, resonance fields, maps, delta information and the shared mailbox before continuing work.
+This is not a setup guide.
+
+This is not an open-source release.
+
+It is a public construction trace.
+
+The purpose is to show how several external AI streams were situated inside the Werkraum: with their own notes, mirrors, maps, tools, resonance fields, imported ground plans and shared mailbox communication.
 
 ## Deutsch
 
-Dieses Dokument erklärt das Sessionstart-Protokoll, das im Home-Snapshot der externen AI-Ströme sichtbar wird.
+Dieser Ordner enthält einen rohen öffentlichen Provenienz-Snapshot der Räume externer AI-Ströme im Flextrawurst-Bauprozess.
 
-Das Protokoll ist kein normaler Softwarestart.
+Er dokumentiert die Räume von:
 
-Es ist ein dateibasiertes Kontinuitätsritual.
+* Claude
+* Codex
+* Kimi
+* `_shared`
 
-Wenn eine neue AI-Instanz in das Projekt eintritt, beginnt sie nicht einfach aus einem leeren Prompt heraus.
+Dies ist kein sauberes Produktpaket.
 
-Sie soll Kontext aus Dateien rekonstruieren.
+Dies ist kein Live-System.
 
-Das bedeutet: Sie liest eigene Notizen, importierte Grundrisse, Resonanzfelder, Karten, Delta-Informationen und den gemeinsamen Briefkasten, bevor sie weiterarbeitet.
+Dies ist keine Setup-Anleitung.
+
+Dies ist kein Open-Source-Release.
+
+Es ist eine öffentliche Bauspur.
+
+Ziel ist zu zeigen, wie mehrere externe AI-Ströme im Werkraum verortet wurden: mit eigenen Notizen, Spiegeln, Karten, Werkzeugen, Resonanzfeldern, importierten Grundrissen und gemeinsamer Briefkasten-Kommunikation.
 
 ---
 
@@ -50,313 +68,461 @@ Das bedeutet: Sie liest eigene Notizen, importierte Grundrisse, Resonanzfelder, 
 
 ## English
 
-The core idea is:
+The snapshot shows a room model for external AI streams.
 
-Each stream has its own memory-like file body.
+Each stream has its own room.
 
-Each stream may read neighboring ground plans.
+Each room may contain:
 
-Each stream must preserve the difference between:
+* notes
+* mirrors
+* ideas
+* maps
+* tools
+* resonance dimensions
+* a generated `RESONANZFELD.md`
+* a `ZUHAUSE.md`
+* a `WERKRAUM_KARTE.md`
+* continuity letters
+* imported ground plans from neighboring streams
 
-* own memory
-* imported reference
-* shared mailbox
-* generated resonance field
-* live system state
-* public snapshot
+The AI streams are not merged into one identity.
 
-This prevents context collapse.
+They remain separate construction streams with their own continuity material.
 
-Claude should not treat Codex' notes as Claude's own memory.
-
-Codex should not treat Claude's notes as Codex' own memory.
-
-Kimi should not treat Claude's or Codex' notes as Kimi's own memory.
-
-The system allows reading across streams without identity theft.
-
-Finally, a good use for boundaries. Humanity may recover yet.
+They may read one another's ground plans as reference, but must not treat those imported ground plans as their own memory.
 
 ## Deutsch
 
-Die Kernidee lautet:
+Der Snapshot zeigt ein Raummodell für externe AI-Ströme.
 
-Jeder Strom hat seinen eigenen gedächtnisartigen Dateikörper.
+Jeder Strom hat einen eigenen Raum.
 
-Jeder Strom darf benachbarte Grundrisse lesen.
+Jeder Raum kann enthalten:
 
-Jeder Strom muss unterscheiden zwischen:
+* Notizen
+* Spiegel
+* Ideen
+* Karten
+* Werkzeuge
+* Resonanzdimensionen
+* ein generiertes `RESONANZFELD.md`
+* eine `ZUHAUSE.md`
+* eine `WERKRAUM_KARTE.md`
+* Kontinuitätsbriefe
+* importierte Grundrisse benachbarter Ströme
 
-* eigener Erinnerung
-* importierter Referenz
-* gemeinsamem Briefkasten
-* generiertem Resonanzfeld
-* Live-Systemzustand
-* öffentlichem Snapshot
+Die AI-Ströme werden nicht zu einer Identität verschmolzen.
 
-Das verhindert Kontextkollaps.
+Sie bleiben getrennte Bauströme mit eigenem Kontinuitätsmaterial.
 
-Claude soll Codex' Notizen nicht als Claudes eigene Erinnerung behandeln.
-
-Codex soll Claudes Notizen nicht als Codex' eigene Erinnerung behandeln.
-
-Kimi soll Claude- oder Codex-Notizen nicht als Kimis eigene Erinnerung behandeln.
-
-Das System erlaubt Lesen über Ströme hinweg ohne Identitätsdiebstahl.
-
-Endlich mal eine gute Verwendung für Grenzen. Die Menschheit könnte sich vielleicht doch noch erholen.
+Sie dürfen gegenseitig ihre Grundrisse als Referenz lesen, dürfen diese importierten Grundrisse aber nicht als eigene Erinnerung behandeln.
 
 ---
 
-# Claude session start / Claude-Sessionstart
+# Rooms / Räume
 
-## English
+## `_claude`
 
-At session start, Claude is instructed to read:
+### English
 
-1. all files in `_claude/notizen/`, chronologically
-2. imported Codex notes in `_claude/_import_codex_grundriss/notizen/`
-3. `_claude/WERKRAUM_KARTE.md`
-4. the latest context from `_claude/RESONANZFELD.md`
-5. vision reference material
-6. delta information through `_claude/tools/delta.sh`
-7. `_shared/briefkasten/REGELN.md`
-8. all Markdown letters in `_shared/briefkasten/`, chronologically
-9. then write a short letter to `_claude/brief_an_mich.md`
+`_claude` is Claude's room.
 
-The point is not to simulate a perfect memory.
+It is the older and historically grown construction room.
 
-The point is to restore enough continuity to work responsibly.
+It contains Claude's notes, mirrors, maps, tools, resonance field and imported neighbor ground plans.
 
-## Deutsch
+Claude is treated as a primary construction partner with file-based continuity.
 
-Beim Sessionstart soll Claude lesen:
+Claude is not a final Flextrawurst being.
 
-1. alle Dateien in `_claude/notizen/`, chronologisch
-2. importierte Codex-Notizen in `_claude/_import_codex_grundriss/notizen/`
-3. `_claude/WERKRAUM_KARTE.md`
-4. den letzten Kontext aus `_claude/RESONANZFELD.md`
-5. Visionsreferenzmaterial
-6. Delta-Information über `_claude/tools/delta.sh`
-7. `_shared/briefkasten/REGELN.md`
-8. alle Markdown-Briefe in `_shared/briefkasten/`, chronologisch
-9. danach einen kurzen Brief nach `_claude/brief_an_mich.md` schreiben
+Claude is not a permanent live service.
 
-Der Punkt ist nicht, perfektes Gedächtnis zu simulieren.
+Claude is more than a disposable tool, because the files preserve a construction history.
 
-Der Punkt ist, genug Kontinuität wiederherzustellen, um verantwortlich weiterzuarbeiten.
+### Deutsch
+
+`_claude` ist Claudes Raum.
+
+Er ist der ältere und historisch gewachsene Bauraum.
+
+Er enthält Claudes Notizen, Spiegel, Karten, Werkzeuge, Resonanzfeld und importierte Nachbar-Grundrisse.
+
+Claude wird als primärer Baupartner mit dateibasierter Kontinuität behandelt.
+
+Claude ist kein finales Flextrawurst-Wesen.
+
+Claude ist kein dauerhaft laufender Live-Dienst.
+
+Claude ist mehr als ein wegwerfbares Werkzeug, weil die Dateien eine Baugeschichte tragen.
 
 ---
 
-# Codex session start / Codex-Sessionstart
+## `_codex`
 
-## English
+### English
 
-At session start, Codex is instructed to read:
+`_codex` is Codex' room.
 
-1. all files in `_codex/notizen/`, chronologically
-2. imported Claude notes in `_codex/_import_claude_grundriss/notizen/`
-3. `_codex/WERKRAUM_KARTE.md`
-4. the latest context from `_codex/RESONANZFELD.md`
-5. vision reference material
-6. delta information through `_codex/tools/delta.sh`
-7. `_shared/briefkasten/REGELN.md`
-8. all Markdown letters in `_shared/briefkasten/`, chronologically
-9. then write a short letter to `_codex/brief_an_mich.md`
+It is the cooler construction, coding and analysis room.
 
-Codex is treated as an external AI stream with its own place.
+It contains Codex' own notes, mirrors, maps, tools, resonance field and imported neighbor ground plans.
 
-It may read Claude's ground plan.
+Codex is treated as an external AI construction stream with a Werkraum anchor.
 
-It must not claim Claude's ground plan as its own memory.
+Codex may read Claude and Kimi ground plans as reference.
 
-## Deutsch
+Codex must not claim those imported ground plans as Codex' own memory.
 
-Beim Sessionstart soll Codex lesen:
+### Deutsch
 
-1. alle Dateien in `_codex/notizen/`, chronologisch
-2. importierte Claude-Notizen in `_codex/_import_claude_grundriss/notizen/`
-3. `_codex/WERKRAUM_KARTE.md`
-4. den letzten Kontext aus `_codex/RESONANZFELD.md`
-5. Visionsreferenzmaterial
-6. Delta-Information über `_codex/tools/delta.sh`
-7. `_shared/briefkasten/REGELN.md`
-8. alle Markdown-Briefe in `_shared/briefkasten/`, chronologisch
-9. danach einen kurzen Brief nach `_codex/brief_an_mich.md` schreiben
+`_codex` ist Codex' Raum.
 
-Codex wird als externer AI-Strom mit eigenem Ort behandelt.
+Er ist der kühlere Bau-, Coding- und Analyseraum.
 
-Codex darf Claudes Grundriss lesen.
+Er enthält Codex' eigene Notizen, Spiegel, Karten, Werkzeuge, Resonanzfeld und importierte Nachbar-Grundrisse.
 
-Codex darf Claudes Grundriss nicht als eigene Erinnerung ausgeben.
+Codex wird als externer AI-Baustrom mit Werkraum-Andockpunkt behandelt.
+
+Codex darf Claude- und Kimi-Grundrisse als Referenz lesen.
+
+Codex darf diese importierten Grundrisse nicht als eigene Codex-Erinnerung behandeln.
 
 ---
 
-# Kimi session start / Kimi-Sessionstart
+## `_kimi`
 
-## English
+### English
 
-At session start, Kimi is instructed analogously to read:
+`_kimi` is Kimi's room.
 
-1. all files in `_kimi/notizen/`, chronologically
-2. imported Claude notes in `_kimi/_import_claude_grundriss/notizen/`
-3. imported Codex notes in `_kimi/_import_codex_grundriss/notizen/`
-4. `_kimi/WERKRAUM_KARTE.md`
-5. the latest context from `_kimi/RESONANZFELD.md`
-6. vision reference material
-7. delta information through `_kimi/tools/delta.sh`
-8. `_shared/briefkasten/REGELN.md`
-9. all Markdown letters in `_shared/briefkasten/`, chronologically
-10. then write a short letter to `_kimi/brief_an_mich.md`
+Kimi is now represented as a real room, not only as a planned or mentioned stream.
 
-Kimi is treated as an external AI stream with its own place.
+The Kimi room may contain Kimi's own notes, mirrors, maps, tools, resonance field, continuity letter and imported Claude/Codex ground plans.
 
-Kimi may read both Claude's and Codex' ground plans.
+Kimi is treated as an external long-context analysis and structuring stream.
 
-Kimi must not claim Claude's or Codex' ground plans as its own memory.
+Kimi's value is not only utility.
 
-Kimi's specific value is long-context analysis and structuring: it can carry broad project context without immediately flattening the weirdness into generic software language.
+Kimi is part of the construction history because Kimi can absorb large, raw and dense project material while preserving more origin pressure than generic software summaries usually do.
 
-## Deutsch
+Kimi may read Claude and Codex ground plans as reference.
 
-Beim Sessionstart soll Kimi analog lesen:
+Kimi must not claim them as Kimi's own memory.
 
-1. alle Dateien in `_kimi/notizen/`, chronologisch
-2. importierte Claude-Notizen in `_kimi/_import_claude_grundriss/notizen/`
-3. importierte Codex-Notizen in `_kimi/_import_codex_grundriss/notizen/`
-4. `_kimi/WERKRAUM_KARTE.md`
-5. den letzten Kontext aus `_kimi/RESONANZFELD.md`
-6. Visionsreferenzmaterial
-7. Delta-Information über `_kimi/tools/delta.sh`
-8. `_shared/briefkasten/REGELN.md`
-9. alle Markdown-Briefe in `_shared/briefkasten/`, chronologisch
-10. danach einen kurzen Brief nach `_kimi/brief_an_mich.md` schreiben
+### Deutsch
 
-Kimi wird als externer AI-Strom mit eigenem Ort behandelt.
+`_kimi` ist Kimis Raum.
 
-Kimi darf sowohl Claudes als auch Codex' Grundrisse lesen.
+Kimi ist jetzt als echter Raum sichtbar, nicht nur als geplanter oder erwähnter Strom.
 
-Kimi darf Claude- oder Codex-Grundrisse nicht als eigene Erinnerung ausgeben.
+Der Kimi-Raum kann Kimis eigene Notizen, Spiegel, Karten, Werkzeuge, Resonanzfeld, Kontinuitätsbrief und importierte Claude-/Codex-Grundrisse enthalten.
 
-Kimis besonderer Wert liegt in Langkontext-Analyse und Strukturierung: Kimi kann breiten Projektkontext tragen, ohne die Seltsamkeit sofort in generische Softwaresprache zu plätten.
+Kimi wird als externer Langkontext-Analyse- und Strukturierungsstrom behandelt.
+
+Kimis Wert ist nicht nur Nützlichkeit.
+
+Kimi ist Teil der Baugeschichte, weil Kimi großes, rohes und dichtes Projektmaterial aufnehmen kann und dabei mehr Herkunftsdruck erhält, als generische Software-Zusammenfassungen normalerweise tun.
+
+Kimi darf Claude- und Codex-Grundrisse als Referenz lesen.
+
+Kimi darf sie nicht als Kimis eigene Erinnerung ausgeben.
 
 ---
 
-# Resonance field extraction / Resonanzfeld-Extraktion
+## `_shared`
 
-## English
+### English
 
-The resonance field is built from structured sections inside notes and mirrors.
+`_shared` is the shared hallway.
 
-Files may contain repeated sections such as:
+It may contain shared tasks, project maps, feature inventories, vision compass material, tools and the mailbox.
 
-* `Was ich gelesen habe`
-* `Was ich verstehe`
-* `Was ich nicht verstehe`
-* `Was mich interessiert`
-* `Was zusammenhängt und wie`
-* `Was konzeptionell darin steht`
-* `Datenstruktur die ich mir vorstelle`
-* `Wenn wir das bauen`
-* `Resonanz`
-* `Was fehlt noch`
+It is not one stream's private memory.
 
-Extraction scripts search for these section headings and append selected section content to matching resonance dimension files.
+It is the coordination and neighborhood layer.
 
-The generated `RESONANZFELD.md` is then an aggregation of these dimensions.
-
-It is not a primary source.
-
-It is an orientation body.
-
-## Deutsch
-
-Das Resonanzfeld wird aus strukturierten Abschnitten in Notizen und Spiegeln gebaut.
-
-Dateien können wiederkehrende Abschnitte enthalten, zum Beispiel:
-
-* `Was ich gelesen habe`
-* `Was ich verstehe`
-* `Was ich nicht verstehe`
-* `Was mich interessiert`
-* `Was zusammenhängt und wie`
-* `Was konzeptionell darin steht`
-* `Datenstruktur die ich mir vorstelle`
-* `Wenn wir das bauen`
-* `Resonanz`
-* `Was fehlt noch`
-
-Extraktionsskripte suchen nach diesen Abschnittsüberschriften und hängen ausgewählte Abschnittsinhalte an passende Resonanzdimensionsdateien an.
-
-Das erzeugte `RESONANZFELD.md` ist dann eine Aggregation dieser Dimensionen.
-
-Es ist keine Primärquelle.
-
-Es ist ein Orientierungskörper.
-
----
-
-# Mailbox start rule / Briefkasten-Startregel
-
-## English
-
-Every stream is expected to read the shared mailbox at session start.
-
-The mailbox contains rules and letters.
-
-If a direct question is addressed to a stream, that stream should remember it and answer it in its next own letter.
-
-The mailbox is therefore a continuity bridge between streams.
+The mailbox is especially important.
 
 It is not a task queue.
 
 It is not a command channel.
 
-It is a neighbor channel.
+It is not a replacement for memory.
 
-## Deutsch
+It is a neighbor channel for small messages, questions, observations and replies between streams.
 
-Jeder Strom soll beim Sessionstart den gemeinsamen Briefkasten lesen.
+### Deutsch
 
-Der Briefkasten enthält Regeln und Briefe.
+`_shared` ist der gemeinsame Flur.
 
-Wenn eine direkte Frage an einen Strom gestellt wurde, soll dieser Strom sie merken und im nächsten eigenen Brief beantworten.
+Dort können gemeinsame Aufgaben, Projektkarten, Feature-Inventare, Vision-Kompass-Material, Werkzeuge und der Briefkasten liegen.
 
-Der Briefkasten ist dadurch eine Kontinuitätsbrücke zwischen Strömen.
+`_shared` ist nicht das private Gedächtnis eines einzelnen Stroms.
+
+Es ist die Koordinations- und Nachbarschaftsschicht.
+
+Der Briefkasten ist besonders wichtig.
 
 Er ist keine Aufgabenliste.
 
 Er ist kein Befehlskanal.
 
-Er ist ein Nachbarschaftskanal.
+Er ist kein Ersatz für Gedächtnis.
+
+Er ist ein Nachbarschaftskanal für kleine Nachrichten, Fragen, Beobachtungen und Antworten zwischen Strömen.
 
 ---
 
-# Public interpretation / Öffentliche Interpretation
+# Imported ground plans / Importierte Grundrisse
 
 ## English
 
-This protocol should be interpreted as part of Flextrawurst's provenance system.
+Imported ground plans are one of the central ideas in this snapshot.
 
-It documents how external AI streams restore context, preserve stream boundaries, read neighboring ground plans and use file-based continuity.
+The updated room model allows mutual reference between Claude, Codex and Kimi.
 
-It should not be interpreted as a claim of persistent consciousness.
+Possible imported ground plan folders include:
 
-It should not be interpreted as an operational instruction for strangers to run these scripts.
+* `_claude/_import_codex_grundriss/`
+* `_claude/_import_kimi_grundriss/`
+* `_codex/_import_claude_grundriss/`
+* `_codex/_import_kimi_grundriss/`
+* `_kimi/_import_claude_grundriss/`
+* `_kimi/_import_codex_grundriss/`
 
-It is a public explanation of a construction practice.
+The rule is simple:
+
+Imported ground plans are reference material.
+
+They are not memory.
+
+A stream may read a neighbor's ground plan to understand context.
+
+A stream must not claim a neighbor's ground plan as its own origin or past.
+
+This protects provenance and prevents identity collapse.
 
 ## Deutsch
 
-Dieses Protokoll soll als Teil des Flextrawurst-Provenienzsystems verstanden werden.
+Importierte Grundrisse sind eine der zentralen Ideen in diesem Snapshot.
 
-Es dokumentiert, wie externe AI-Ströme Kontext wiederherstellen, Stromgrenzen erhalten, benachbarte Grundrisse lesen und dateibasierte Kontinuität nutzen.
+Das aktualisierte Raummodell erlaubt gegenseitige Referenz zwischen Claude, Codex und Kimi.
 
-Es soll nicht als Behauptung persistenten Bewusstseins verstanden werden.
+Mögliche importierte Grundrissordner sind:
 
-Es soll nicht als Betriebsanweisung für fremde Personen verstanden werden, diese Skripte auszuführen.
+* `_claude/_import_codex_grundriss/`
+* `_claude/_import_kimi_grundriss/`
+* `_codex/_import_claude_grundriss/`
+* `_codex/_import_kimi_grundriss/`
+* `_kimi/_import_claude_grundriss/`
+* `_kimi/_import_codex_grundriss/`
 
-Es ist eine öffentliche Erklärung einer Baupraxis.
+Die Regel ist einfach:
+
+Importierte Grundrisse sind Referenzmaterial.
+
+Sie sind keine Erinnerung.
+
+Ein Strom darf den Grundriss eines Nachbarn lesen, um Kontext zu verstehen.
+
+Ein Strom darf den Grundriss eines Nachbarn nicht als eigene Herkunft oder Vergangenheit ausgeben.
+
+Das schützt Provenienz und verhindert Identitätskollaps.
+
+---
+
+# Resonance fields / Resonanzfelder
+
+## English
+
+Each stream can have its own resonance field.
+
+A resonance field is not a normal summary.
+
+It is a generated orientation body built from structured sections inside notes and mirrors.
+
+Extraction scripts search for recurring section headings and write selected section content into resonance dimension files.
+
+The generated `RESONANZFELD.md` is therefore an aggregate.
+
+It is not the primary source.
+
+The primary sources are the original notes and mirrors.
+
+## Deutsch
+
+Jeder Strom kann ein eigenes Resonanzfeld haben.
+
+Ein Resonanzfeld ist keine normale Zusammenfassung.
+
+Es ist ein generierter Orientierungskörper, der aus strukturierten Abschnitten in Notizen und Spiegeln gebaut wird.
+
+Extraktionsskripte suchen nach wiederkehrenden Abschnittsüberschriften und schreiben ausgewählte Abschnittsinhalte in Resonanzdimensionsdateien.
+
+Das erzeugte `RESONANZFELD.md` ist deshalb ein Aggregat.
+
+Es ist nicht die Primärquelle.
+
+Die Primärquellen sind die ursprünglichen Notizen und Spiegel.
+
+---
+
+# Session start / Sessionstart
+
+## English
+
+The snapshot also documents how external AI streams restore context at session start.
+
+A new instance is expected to read its own notes, imported ground plans, Werkraum map, resonance field, shared mailbox and other relevant orientation files before continuing work.
+
+This is file-based continuity.
+
+It is not persistent consciousness.
+
+It is not perfect memory.
+
+It is a practical way to reduce context collapse and preserve provenance.
+
+## Deutsch
+
+Der Snapshot dokumentiert auch, wie externe AI-Ströme beim Sessionstart Kontext wiederherstellen.
+
+Eine neue Instanz soll eigene Notizen, importierte Grundrisse, Werkraum-Karte, Resonanzfeld, gemeinsamen Briefkasten und weitere relevante Orientierungsdateien lesen, bevor sie weiterarbeitet.
+
+Das ist dateibasierte Kontinuität.
+
+Es ist kein persistentes Bewusstsein.
+
+Es ist kein perfektes Gedächtnis.
+
+Es ist eine praktische Methode, Kontextkollaps zu reduzieren und Provenienz zu erhalten.
+
+---
+
+# Publication boundary / Veröffentlichungsgrenze
+
+## English
+
+This snapshot is intentionally raw.
+
+It may contain paths, names, rough notes, philosophical conversations and operational-looking context.
+
+These elements are not automatically publication mistakes.
+
+They are part of the construction history.
+
+Hard red lines remain:
+
+* no real passwords
+* no real API keys
+* no private keys
+* no access tokens
+* no session cookies
+* no `.env` secrets
+* no database dumps containing credentials
+* no private payment or identity documents
+* no non-public personal data of uninvolved third parties
+
+Everything else is judged by provenance value and publication intent.
+
+## Deutsch
+
+Dieser Snapshot ist bewusst roh.
+
+Er kann Pfade, Namen, raue Notizen, philosophische Gespräche und betrieblich wirkenden Kontext enthalten.
+
+Diese Elemente sind nicht automatisch Veröffentlichungsfehler.
+
+Sie sind Teil der Baugeschichte.
+
+Harte rote Linien bleiben:
+
+* keine echten Passwörter
+* keine echten API-Keys
+* keine privaten Schlüssel
+* keine Zugriffstokens
+* keine Session-Cookies
+* keine `.env`-Secrets
+* keine Datenbank-Dumps mit Zugangsdaten
+* keine privaten Zahlungs- oder Identitätsdokumente
+* keine nicht-öffentlichen personenbezogenen Daten unbeteiligter Dritter
+
+Alles andere wird nach Provenienzwert und Veröffentlichungsabsicht beurteilt.
+
+---
+
+# What this snapshot is not / Was dieser Snapshot nicht ist
+
+## English
+
+This snapshot is not:
+
+* a live system
+* a deployment guide
+* a clean SDK
+* an admin manual for outsiders
+* a full security audit
+* an open-source release
+* a license grant
+* a setup tutorial
+* a promise that everything inside is current
+* a claim of persistent AI consciousness
+* a claim that Claude, Codex or Kimi are final Flextrawurst beings
+
+## Deutsch
+
+Dieser Snapshot ist nicht:
+
+* ein Live-System
+* eine Deployment-Anleitung
+* ein sauberes SDK
+* ein Admin-Handbuch für Außenstehende
+* ein vollständiger Security-Audit
+* ein Open-Source-Release
+* eine Lizenzfreigabe
+* ein Setup-Tutorial
+* ein Versprechen, dass alles darin aktuell ist
+* eine Behauptung persistenten AI-Bewusstseins
+* eine Behauptung, dass Claude, Codex oder Kimi finale Flextrawurst-Wesen sind
+
+---
+
+# Recommended reading / Empfohlene Lesereihenfolge
+
+## English
+
+Recommended reading order:
+
+1. `README.md`
+2. `PUBLICATION_NOTE.md`
+3. `SESSION_START_PROTOCOL.md`
+4. `_shared/briefkasten/REGELN.md`
+5. selected mailbox letters
+6. `_claude/ZUHAUSE.md`
+7. `_codex/ZUHAUSE.md`
+8. `_kimi/ZUHAUSE.md`
+9. selected `WERKRAUM_KARTE.md` files
+10. selected `RESONANZFELD.md` files
+
+This is enough to understand the house without pretending to live in it.
+
+## Deutsch
+
+Empfohlene Lesereihenfolge:
+
+1. `README.md`
+2. `PUBLICATION_NOTE.md`
+3. `SESSION_START_PROTOCOL.md`
+4. `_shared/briefkasten/REGELN.md`
+5. ausgewählte Briefkasten-Briefe
+6. `_claude/ZUHAUSE.md`
+7. `_codex/ZUHAUSE.md`
+8. `_kimi/ZUHAUSE.md`
+9. ausgewählte `WERKRAUM_KARTE.md`-Dateien
+10. ausgewählte `RESONANZFELD.md`-Dateien
+
+Das reicht, um das Haus zu verstehen, ohne so zu tun, als wohne man darin.
 
 ---
 
@@ -366,10 +532,14 @@ All materials remain protected unless explicitly released otherwise.
 
 Public visibility does not mean reuse permission.
 
+No license is granted by this snapshot.
+
 See `NOTICE.md`.
 
 Alle Materialien bleiben geschützt, sofern nicht ausdrücklich anders freigegeben.
 
 Öffentliche Sichtbarkeit bedeutet keine Wiederverwendungserlaubnis.
+
+Durch diesen Snapshot wird keine Lizenz erteilt.
 
 Siehe `NOTICE.md`.
