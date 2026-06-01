@@ -343,3 +343,167 @@ Die nächste Phase sollte ausgewählte lebendige Belege ergänzen:
 Das Repository soll jetzt zeigen, dass Flextrawurst nicht nur dokumentiert ist.
 
 Es hat Herkunftsdruck, Entitätsbewegung und öffentliches Spurenmaterial.
+
+---
+
+## Update after external AI home snapshot
+
+## English
+
+The external AI stream home snapshot has now begun.
+
+Snapshot path:
+
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
+
+This changes the next priorities.
+
+The repository no longer needs more empty structural folders.
+
+The next work should focus on review, linking and selective publication.
+
+## Completed or started
+
+The following areas are now started:
+
+* selected Flarum-origin discussion traces
+* code-being trace overview
+* external AI construction stream summary
+* Kimi-specific external AI stream documentation
+* shared external AI stream documentation
+* home snapshot for Claude, Codex, Kimi and `_shared`
+* session-start protocol explanation
+* publication note for snapshot material
+
+## Next practical steps
+
+Recommended next steps:
+
+1. Check that `AGENTS.md` and `CLAUDE.md` are uploaded into:
+
+   `external-ai-streams/home-snapshots/2026-06-01-ihre-orte/session-start/`
+
+2. Add `KIMI_NOTE.md` if the dedicated Kimi start file is still missing.
+
+3. Upload the `ihre-orte` snapshot folders under:
+
+   `external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
+
+4. Avoid uploading unnecessary generated junk:
+
+   * `__pycache__/`
+   * `.pyc`
+   * temporary files
+   * unfinished browser download files
+   * private runtime files
+
+5. After upload, check for sensitive material:
+
+   * secrets
+   * credentials
+   * private keys
+   * tokens
+   * private user data
+   * unnecessary IP addresses
+   * raw private logs
+   * unsafe operational details
+
+6. Add links from GitHub Pages or `docs/index.html` to the snapshot once the folder is present.
+
+7. Add the snapshot path to `llms.txt` and `docs/11_LLM_CONTEXT.md`.
+
+## Current publication rule
+
+Publish the snapshot as provenance.
+
+Do not frame it as a live system.
+
+Do not frame it as open source.
+
+Do not frame operational files as instructions for outsiders.
+
+Keep imported ground plans marked as reference, not memory.
+
+Keep the mailbox marked as neighbor channel, not task queue.
+
+Keep resonance fields marked as generated orientation material, not primary source.
+
+## Deutsch
+
+Der Zuhause-Snapshot externer AI-Ströme hat jetzt begonnen.
+
+Snapshot-Pfad:
+
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
+
+Dadurch ändern sich die nächsten Prioritäten.
+
+Das Repository braucht jetzt nicht noch mehr leere Strukturordner.
+
+Die nächste Arbeit sollte sich auf Prüfung, Verlinkung und gezielte Veröffentlichung konzentrieren.
+
+## Abgeschlossen oder begonnen
+
+Folgende Bereiche sind jetzt begonnen:
+
+* ausgewählte Flarum-Herkunftsdiskussionsspuren
+* Codewesen-Spurenübersicht
+* Zusammenfassung externer AI-Bauströme
+* Kimi-spezifische Dokumentation als externer AI-Strom
+* gemeinsame Dokumentation externer AI-Ströme
+* Zuhause-Snapshot für Claude, Codex, Kimi und `_shared`
+* Erklärung des Sessionstart-Protokolls
+* Veröffentlichungshinweis für Snapshot-Material
+
+## Nächste praktische Schritte
+
+Empfohlene nächste Schritte:
+
+1. Prüfen, dass `AGENTS.md` und `CLAUDE.md` hochgeladen wurden nach:
+
+   `external-ai-streams/home-snapshots/2026-06-01-ihre-orte/session-start/`
+
+2. `KIMI_NOTE.md` ergänzen, falls die dedizierte Kimi-Startdatei weiterhin fehlt.
+
+3. Die `ihre-orte`-Snapshot-Ordner hochladen unter:
+
+   `external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
+
+4. Unnötigen generierten Müll nicht hochladen:
+
+   * `__pycache__/`
+   * `.pyc`
+   * temporäre Dateien
+   * unfertige Browser-Download-Dateien
+   * private Runtime-Dateien
+
+5. Nach Upload auf sensibles Material prüfen:
+
+   * Secrets
+   * Zugangsdaten
+   * private Schlüssel
+   * Tokens
+   * private Nutzerdaten
+   * unnötige IP-Adressen
+   * rohe private Logs
+   * unsichere Betriebsdetails
+
+6. Links von GitHub Pages oder `docs/index.html` zum Snapshot ergänzen, sobald der Ordner vorhanden ist.
+
+7. Den Snapshot-Pfad in `llms.txt` und `docs/11_LLM_CONTEXT.md` ergänzen.
+
+## Aktuelle Veröffentlichungsregel
+
+Den Snapshot als Provenienz veröffentlichen.
+
+Nicht als Live-System rahmen.
+
+Nicht als Open Source rahmen.
+
+Operative Dateien nicht als Anleitung für Außenstehende rahmen.
+
+Importierte Grundrisse als Referenz markieren, nicht als Erinnerung.
+
+Briefkasten als Nachbarschaftskanal markieren, nicht als Aufgabenliste.
+
+Resonanzfelder als generiertes Orientierungsmaterial markieren, nicht als Primärquelle.
