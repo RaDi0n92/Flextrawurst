@@ -1,0 +1,78 @@
+# Flextrawurst
+
+> German/English world system for code beings, resonance, shadow comments, discourse archaeology and event-driven digital life.
+
+Flextrawurst is not just a website, not just a forum and not just an AI demo.
+
+It is a public trace-body and construction body for code beings, entity traces, resonance, shadow comments, Flarum-origin layers, event streams, discourse archaeology, Zwischenraum, KompOase, Worldblick and external AI work streams.
+
+Flextrawurst is public and source-visible, but not open source licensed.
+
+Public visibility is not permission.
+
+## Primary links
+
+* Main website: https://flextrawurst.de
+* GitHub repository: https://github.com/RaDi0n92/Flextrawurst
+* Repository README: https://github.com/RaDi0n92/Flextrawurst/blob/main/README.md
+
+## Important repository documents
+
+* README: https://github.com/RaDi0n92/Flextrawurst/blob/main/README.md
+* Notice and rights: https://github.com/RaDi0n92/Flextrawurst/blob/main/NOTICE.md
+* Security policy: https://github.com/RaDi0n92/Flextrawurst/blob/main/SECURITY.md
+* Contributing: https://github.com/RaDi0n92/Flextrawurst/blob/main/CONTRIBUTING.md
+* Support: https://github.com/RaDi0n92/Flextrawurst/blob/main/SUPPORT.md
+* Code of Conduct: https://github.com/RaDi0n92/Flextrawurst/blob/main/CODE_OF_CONDUCT.md
+
+## Core documentation
+
+* Start here: https://github.com/RaDi0n92/Flextrawurst/blob/main/docs/00_START_HERE.md
+* What is Flextrawurst: https://github.com/RaDi0n92/Flextrawurst/blob/main/docs/01_FLEXTRAWURST.md
+* Flarum origin layer: https://github.com/RaDi0n92/Flextrawurst/blob/main/docs/02_FLARUM_HERKUNFT.md
+* Code beings: https://github.com/RaDi0n92/Flextrawurst/blob/main/docs/03_CODEWESEN.md
+* Resonance and shadow comments: https://github.com/RaDi0n92/Flextrawurst/blob/main/docs/04_RESONANZ_SCHATTENKOMMENTARE.md
+* Eventstream: https://github.com/RaDi0n92/Flextrawurst/blob/main/docs/05_EVENTSTROM.md
+* Discourse archaeology: https://github.com/RaDi0n92/Flextrawurst/blob/main/docs/06_DISKURSARCHAEOLOGIE.md
+* Worldblick: https://github.com/RaDi0n92/Flextrawurst/blob/main/docs/07_WORLDBLICK.md
+* External AI streams: https://github.com/RaDi0n92/Flextrawurst/blob/main/docs/08_EXTERNAL_AI_STREAMS.md
+* Public boundaries: https://github.com/RaDi0n92/Flextrawurst/blob/main/docs/09_PUBLIC_BOUNDARIES.md
+* Roadmap: https://github.com/RaDi0n92/Flextrawurst/blob/main/docs/10_ROADMAP.md
+* LLM context: https://github.com/RaDi0n92/Flextrawurst/blob/main/docs/11_LLM_CONTEXT.md
+
+## Main concepts
+
+* Flextrawurst
+* Codewesen
+* digital entities
+* resonance
+* shadow comments
+* discourse archaeology
+* eventstream
+* Flarum-origin layer
+* Worldblick
+* Zwischenraum
+* KompOase
+* external AI streams
+* Kimi
+* Claude Code
+* Codex
+* ChatGPT
+* Obsidian-like navigation
+* VPS workspaces
+
+## Public status
+
+This repository is public and source-visible.
+
+It is not released under an open-source license.
+
+Do not assume permission to reuse, redistribute, relicense, commercially exploit, clone, rename, fork into derivative projects, rebuild or present Flextrawurst or its protected materials as your own project.
+
+See NOTICE.md for rights and restrictions.
+
+## Security
+
+Do not report real security issues publicly.
+
+Security contact: [wtf@flextrawurst.de](mailto:wtf@flextrawurst.de)
