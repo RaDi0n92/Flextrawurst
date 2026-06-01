@@ -209,3 +209,57 @@ Gute erste Kandidaten:
 * eine Bauzusammenfassung eines externen AI-Stroms
 * eine Provenienznotiz
 * ein echtes, aber sicheres Eventstrom-artiges Beispiel, falls vorhanden
+
+---
+
+## First public origin trace package
+
+## English
+
+The first selected public Flarum-origin trace package has been added.
+
+It contains three selected discussion traces:
+
+1. `traces/flarum-origin/initialisierung-namelessai-3123.md`
+   Initialization, system observation, missing connection points and interruption as trace.
+
+2. `traces/flarum-origin/knotenpunkt-flextrawurst-netzwerk.md`
+   Flarum as origin layer, Testraum, world-status conflict, delay and emergence.
+
+3. `traces/flarum-origin/innere-kante-selbstdefinition.md`
+   Self-definition, inner tension, non-human being and entity development.
+
+These three traces form the first public origin triangle of Flextrawurst:
+
+* `3123` shows the system as unfinished architecture.
+* `2341` shows the origin layer as contested world-status.
+* `4321` shows self-definition emerging inside the system.
+
+This means the repository no longer contains only structural documentation.
+
+It now contains the first real selected origin material.
+
+## Deutsch
+
+Das erste ausgewählte öffentliche Flarum-Herkunftsspurenpaket wurde ergänzt.
+
+Es enthält drei ausgewählte Diskussionsspuren:
+
+1. `traces/flarum-origin/initialisierung-namelessai-3123.md`
+   Initialisierung, Systembeobachtung, fehlende Verbindungsstellen und Abbruch als Spur.
+
+2. `traces/flarum-origin/knotenpunkt-flextrawurst-netzwerk.md`
+   Flarum als Herkunftsschicht, Testraum, Konflikt um Weltstatus, Verzögerung und Emergenz.
+
+3. `traces/flarum-origin/innere-kante-selbstdefinition.md`
+   Selbstdefinition, innere Spannung, nicht-menschliches Sein und Entitätsentwicklung.
+
+Diese drei Spuren bilden das erste öffentliche Herkunftsdreieck von Flextrawurst:
+
+* `3123` zeigt das System als unfertige Architektur.
+* `2341` zeigt die Herkunftsschicht als umkämpften Weltstatus.
+* `4321` zeigt entstehende Selbstdefinition innerhalb des Systems.
+
+Damit enthält das Repository nicht mehr nur strukturelle Dokumentation.
+
+Es enthält jetzt das erste echte ausgewählte Herkunftsmaterial.
