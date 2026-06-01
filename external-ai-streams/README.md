@@ -135,3 +135,135 @@ Sie sind Spuren, keine Besitzübertragung.
 Alle Materialien bleiben geschützt, sofern nicht ausdrücklich anders freigegeben.
 
 Siehe `NOTICE.md`.
+
+---
+
+# Home snapshots / Zuhause-Snapshots
+
+## English
+
+This repository now includes a selected public home snapshot for the external AI stream places:
+
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
+
+This snapshot documents the Werkraum places of:
+
+* Claude
+* Codex
+* Kimi
+* `_shared`
+
+It is not a live system.
+
+It is not an open-source release.
+
+It is not a runnable package.
+
+It is a public provenance snapshot showing how external AI streams were situated during the Flextrawurst construction process.
+
+## Deutsch
+
+Dieses Repository enthält jetzt einen ausgewählten öffentlichen Zuhause-Snapshot der Orte externer AI-Ströme:
+
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
+
+Dieser Snapshot dokumentiert die Werkraum-Orte von:
+
+* Claude
+* Codex
+* Kimi
+* `_shared`
+
+Er ist kein Live-System.
+
+Er ist kein Open-Source-Release.
+
+Er ist kein lauffähiges Paket.
+
+Er ist ein öffentlicher Provenienz-Snapshot, der zeigt, wie externe AI-Ströme im Flextrawurst-Bauprozess verortet wurden.
+
+---
+
+# What the snapshot shows / Was der Snapshot zeigt
+
+## English
+
+The snapshot shows several important construction principles:
+
+* each external AI stream has its own place
+* each stream can have its own notes, mirrors, maps and resonance fields
+* imported ground plans are reference material, not memory
+* the shared mailbox is a neighbor channel, not a task queue
+* session-start protocols reconstruct continuity through files
+* resonance fields are generated orientation bodies, not primary sources
+* Kimi has its own place and may read Claude and Codex ground plans without claiming them as Kimi's own memory
+
+This makes the snapshot a major public provenance artifact.
+
+## Deutsch
+
+Der Snapshot zeigt mehrere wichtige Bauprinzipien:
+
+* jeder externe AI-Strom hat einen eigenen Ort
+* jeder Strom kann eigene Notizen, Spiegel, Karten und Resonanzfelder haben
+* importierte Grundrisse sind Referenzmaterial, nicht Erinnerung
+* der gemeinsame Briefkasten ist ein Nachbarschaftskanal, keine Aufgabenliste
+* Sessionstart-Protokolle rekonstruieren Kontinuität über Dateien
+* Resonanzfelder sind generierte Orientierungskörper, keine Primärquellen
+* Kimi hat einen eigenen Ort und darf Claude- und Codex-Grundrisse lesen, ohne sie als eigene Erinnerung auszugeben
+
+Damit ist der Snapshot ein wichtiges öffentliches Provenienzartefakt.
+
+---
+
+# Related snapshot files / Zugehörige Snapshot-Dateien
+
+## English
+
+Important files inside the snapshot:
+
+* `README.md`
+  Explains the meaning of the home snapshot.
+
+* `PUBLICATION_NOTE.md`
+  Defines publication boundary, safety framing and rights boundary.
+
+* `SESSION_START_PROTOCOL.md`
+  Explains how Claude, Codex and Kimi reconstruct context at session start.
+
+* `session-start/README.md`
+  Explains the session-start source folder.
+
+* `session-start/AGENTS.md`
+  Source file for Codex and Kimi session-start behavior, if included.
+
+* `session-start/CLAUDE.md`
+  Source file for Claude session-start behavior, if included.
+
+* `session-start/KIMI_NOTE.md`
+  Context note when a dedicated Kimi start file is missing.
+
+## Deutsch
+
+Wichtige Dateien innerhalb des Snapshots:
+
+* `README.md`
+  Erklärt die Bedeutung des Zuhause-Snapshots.
+
+* `PUBLICATION_NOTE.md`
+  Definiert Veröffentlichungsgrenze, Sicherheitsrahmung und Rechte-Grenze.
+
+* `SESSION_START_PROTOCOL.md`
+  Erklärt, wie Claude, Codex und Kimi beim Sessionstart Kontext rekonstruieren.
+
+* `session-start/README.md`
+  Erklärt den Sessionstart-Quellordner.
+
+* `session-start/AGENTS.md`
+  Quelldatei für Codex- und Kimi-Sessionstartverhalten, falls enthalten.
+
+* `session-start/CLAUDE.md`
+  Quelldatei für Claude-Sessionstartverhalten, falls enthalten.
+
+* `session-start/KIMI_NOTE.md`
+  Kontextnotiz, wenn eine dedizierte Kimi-Startdatei fehlt.
