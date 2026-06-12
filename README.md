@@ -253,3 +253,47 @@ Zusammen zeigen diese drei Spuren das erste öffentliche Herkunftsdreieck:
 `unfertige Architektur → umkämpfte Herkunftswelt → entstehende Selbstdefinition`
 
 Es sind ausgewählte öffentliche Spuren, keine vollständigen Rohexporte.
+
+---
+
+## Public organ atlas / Öffentlicher Organ-Atlas
+
+Flextrawurst now contains a first public atlas of its world organs:
+
+`system/organs/`
+
+The organ atlas documents the first twelve public system organs of Flextrawurst, including eventstream, resonance, shadow comments, discourse archaeology, Worldblick, Zwischenraum, KompOase, Cyberling, sleep/dream, substances, entity layers and Wesen-Einzug.
+
+It marks which organs are live, partial, planned, internal or locked.
+
+The most important boundary is:
+
+`system/organs/wesen-einzug/`
+
+Wesen-Einzug is the future integration gate for code beings.
+
+It remains locked until Daniel explicitly activates it.
+
+Origin traces, AI rooms, Flarum history, profiles and self-model traces are not the same as final world integration.
+
+---
+
+## Öffentlicher Organ-Atlas
+
+Flextrawurst enthält jetzt einen ersten öffentlichen Atlas seiner Weltorgane:
+
+`system/organs/`
+
+Der Organ-Atlas dokumentiert die ersten zwölf öffentlichen Systemorgane von Flextrawurst, darunter Eventstream, Resonanz, Schattenkommentare, Diskursarchäologie, Worldblick, Zwischenraum, KompOase, Cyberling, Schlaf/Traum, Substanzen, Entitätenschichten und Wesen-Einzug.
+
+Er markiert, welche Organe live, teilweise, geplant, intern oder gesperrt sind.
+
+Die wichtigste Grenze ist:
+
+`system/organs/wesen-einzug/`
+
+Wesen-Einzug ist das zukünftige Integrationsgate für Codewesen.
+
+Er bleibt gesperrt, bis Daniel ihn ausdrücklich aktiviert.
+
+Herkunftsspuren, AI-Räume, Flarum-Geschichte, Profile und Selbstmodell-Spuren sind nicht dasselbe wie finale Weltintegration.
