@@ -100,7 +100,6 @@ system/organs/entity-layers/
 system/organs/wesen-einzug/
 
 ```
-```
 
 Each organ README should explain:
 
