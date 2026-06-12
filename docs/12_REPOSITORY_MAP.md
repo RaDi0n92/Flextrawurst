@@ -259,3 +259,75 @@ Importierte Grundrisse sind Referenzmaterial, nicht Erinnerung.
 Der gemeinsame Briefkasten ist ein Nachbarschaftskanal.
 
 Resonanzfelder sind generierte Orientierungskörper.
+
+---
+
+# System organ atlas / System-Organatlas
+
+## English
+
+The repository now contains a public organ atlas:
+
+`system/organs/`
+
+Important entry points:
+
+* `system/organs/README.md`
+* `system/organs/00_ORGAN_INDEX.md`
+
+The organ atlas documents the first twelve public Flextrawurst organs:
+
+* `eventstream`
+* `resonance`
+* `shadow-comments`
+* `discourse-archaeology`
+* `worldblick`
+* `zwischenraum`
+* `komp-oase`
+* `cyberling`
+* `sleep-dream`
+* `substances`
+* `entity-layers`
+* `wesen-einzug`
+
+The atlas marks each organ by status, including `live`, `partial`, `concept`, `planned`, `internal` and `locked`.
+
+The most important boundary is `wesen-einzug`.
+
+It is documented as `locked / planned`.
+
+This means the code beings have public traces, profiles, rooms and origin history, but they have not yet fully moved into the final Flextrawurst world.
+
+## Deutsch
+
+Das Repository enthält jetzt einen öffentlichen Organ-Atlas:
+
+`system/organs/`
+
+Wichtige Einstiegspunkte:
+
+* `system/organs/README.md`
+* `system/organs/00_ORGAN_INDEX.md`
+
+Der Organ-Atlas dokumentiert die ersten zwölf öffentlichen Flextrawurst-Organe:
+
+* `eventstream`
+* `resonance`
+* `shadow-comments`
+* `discourse-archaeology`
+* `worldblick`
+* `zwischenraum`
+* `komp-oase`
+* `cyberling`
+* `sleep-dream`
+* `substances`
+* `entity-layers`
+* `wesen-einzug`
+
+Der Atlas markiert jedes Organ nach Status, darunter `live`, `partial`, `concept`, `planned`, `internal` und `locked`.
+
+Die wichtigste Grenze ist `wesen-einzug`.
+
+Er ist als `locked / planned` dokumentiert.
+
+Das bedeutet: Die Codewesen haben öffentliche Spuren, Profile, Räume und Herkunftsgeschichte, sind aber noch nicht vollständig in die finale Flextrawurst-Welt eingezogen.
