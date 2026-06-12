@@ -196,7 +196,7 @@ Siehe:
 
 The repository contains a public AI rooms snapshot area:
 
-`external-ai-streams/home-snapshots/2026-06-01-ai-rooms/`
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
 
 Purpose:
 
@@ -230,7 +230,7 @@ Resonance fields are generated orientation bodies.
 
 Das Repository enthält einen öffentlichen AI-Räume-Snapshot-Bereich:
 
-`external-ai-streams/home-snapshots/2026-06-01-ai-rooms/`
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
 
 Zweck:
 
