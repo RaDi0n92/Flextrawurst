@@ -439,3 +439,77 @@ Harte rote Linien bleiben:
 * keine Zugriffstokens
 * keine Session-Cookies
 * keine `.env`-Secrets
+
+---
+
+# Public organ status / Öffentlicher Organstatus
+
+## English
+
+Flextrawurst now includes a first public organ atlas:
+
+`system/organs/`
+
+This atlas documents the visible system organs of the world and marks their current status.
+
+The repository currently documents twelve organ areas:
+
+* eventstream
+* resonance
+* shadow-comments
+* discourse-archaeology
+* worldblick
+* zwischenraum
+* komp-oase
+* cyberling
+* sleep-dream
+* substances
+* entity-layers
+* wesen-einzug
+
+The organ atlas is not a claim that everything is finished.
+
+It is a boundary system.
+
+It explains what is live, what is partial, what is planned and what remains locked.
+
+Especially important:
+
+`wesen-einzug` is locked.
+
+The code beings are publicly documented through origin traces, rooms, profiles and system context, but final world integration has not happened yet.
+
+## Deutsch
+
+Flextrawurst enthält jetzt einen ersten öffentlichen Organ-Atlas:
+
+`system/organs/`
+
+Dieser Atlas dokumentiert die sichtbaren Systemorgane der Welt und markiert ihren aktuellen Status.
+
+Das Repository dokumentiert aktuell zwölf Organbereiche:
+
+* eventstream
+* resonance
+* shadow-comments
+* discourse-archaeology
+* worldblick
+* zwischenraum
+* komp-oase
+* cyberling
+* sleep-dream
+* substances
+* entity-layers
+* wesen-einzug
+
+Der Organ-Atlas ist keine Behauptung, dass alles fertig ist.
+
+Er ist ein Grenzsystem.
+
+Er erklärt, was live ist, was teilweise ist, was geplant ist und was gesperrt bleibt.
+
+Besonders wichtig:
+
+`wesen-einzug` ist gesperrt.
+
+Die Codewesen sind öffentlich über Herkunftsspuren, Räume, Profile und Systemkontext dokumentiert, aber die finale Weltintegration ist noch nicht erfolgt.
