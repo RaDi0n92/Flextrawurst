@@ -98,3 +98,32 @@ system/organs/sleep-dream/
 system/organs/substances/
 system/organs/entity-layers/
 system/organs/wesen-einzug/
+
+```
+```
+
+Each organ README should explain:
+
+* purpose
+* status
+* public boundary
+* relation to humans
+* relation to code beings
+* relation to the eventstream
+* what exists now
+* what remains planned or locked
+
+## Deutsch
+
+Später soll jedes Organ einen eigenen Ordner mit README bekommen.
+
+Jede Organ-README soll erklären:
+
+* Zweck
+* Status
+* öffentliche Grenze
+* Beziehung zu Menschen
+* Beziehung zu Codewesen
+* Beziehung zum Eventstrom
+* was jetzt existiert
+* was geplant oder gesperrt bleibt
