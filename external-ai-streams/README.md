@@ -276,7 +276,7 @@ Wichtige Dateien innerhalb des Snapshots:
 
 This repository includes a selected public AI rooms snapshot:
 
-`external-ai-streams/home-snapshots/2026-06-01-ai-rooms/`
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
 
 It documents the external AI stream rooms used during the Flextrawurst construction process:
 
@@ -303,7 +303,7 @@ Resonance fields are generated orientation bodies, not primary sources.
 
 Dieses Repository enthält einen ausgewählten öffentlichen AI-Räume-Snapshot:
 
-`external-ai-streams/home-snapshots/2026-06-01-ai-rooms/`
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
 
 Er dokumentiert die Räume externer AI-Ströme im Flextrawurst-Bauprozess:
 
