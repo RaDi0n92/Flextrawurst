@@ -382,7 +382,7 @@ The repository now includes a selected public AI rooms snapshot.
 
 Snapshot path:
 
-`external-ai-streams/home-snapshots/2026-06-01-ai-rooms/`
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
 
 This snapshot documents:
 
@@ -414,7 +414,7 @@ Das Repository enthält jetzt einen ausgewählten öffentlichen AI-Räume-Snapsh
 
 Snapshot-Pfad:
 
-`external-ai-streams/home-snapshots/2026-06-01-ai-rooms/`
+`external-ai-streams/home-snapshots/2026-06-01-ihre-orte/`
 
 Dieser Snapshot dokumentiert:
 
