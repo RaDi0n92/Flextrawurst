@@ -507,3 +507,133 @@ Importierte Grundrisse als Referenz markieren, nicht als Erinnerung.
 Briefkasten als Nachbarschaftskanal markieren, nicht als Aufgabenliste.
 
 Resonanzfelder als generiertes Orientierungsmaterial markieren, nicht als Primärquelle.
+
+---
+
+## Update after public organ atlas and landing page
+
+## English
+
+The repository has now moved beyond the first public skeleton.
+
+Completed or started:
+
+* public documentation map
+* first public Flarum-origin trace package
+* external AI stream documentation
+* AI stream home snapshot for Claude, Codex, Kimi and `_shared`
+* session-start protocol documentation
+* public organ atlas under `system/organs/`
+* twelve first organ README files
+* organ atlas links from README and core docs
+* LLM discovery file: `llms.txt`
+* cleaned HTML landing page: `docs/index.html`
+
+The repository now contains a large amount of public Markdown material and a long commit history.
+
+The next phase should not primarily create more empty Markdown files.
+
+The next phase should consolidate, index and expose what already exists.
+
+Recommended next steps:
+
+1. Create a public status snapshot.
+2. Create or update a public changelog.
+3. Add a compact index of the most important public files.
+4. Check whether important docs are linked from at least one useful entry point.
+5. Add selected screenshots or visual assets only where they explain the world better than text.
+6. Avoid uploading large raw exports unless they are reviewed and clearly marked.
+7. Keep `wesen-einzug` locked until explicit activation.
+8. Keep provenance separate from final world claims.
+
+Suggested next file:
+
+`docs/17_CURRENT_PUBLIC_STATE.md`
+
+Purpose:
+
+This file should summarize the current public state after the first major documentation wave.
+
+It should answer:
+
+* what exists publicly now?
+* what is only documented?
+* what is live or partial?
+* what is planned?
+* what is locked?
+* what should visitors read first?
+* what should LLMs not misinterpret?
+* what should not be uploaded yet?
+
+Current priority:
+
+Do not add more skeleton.
+
+Create orientation.
+
+The repository now needs a public state snapshot so humans and LLMs can understand the current construction stage without reading over one hundred Markdown files like doomed monks in a digital archive.
+
+---
+
+## Aktualisierung nach öffentlichem Organ-Atlas und Landingpage
+
+## Deutsch
+
+Das Repository ist inzwischen über das erste öffentliche Skelett hinausgewachsen.
+
+Abgeschlossen oder begonnen:
+
+* öffentliche Dokumentationskarte
+* erstes öffentliches Flarum-Herkunftsspurenpaket
+* Dokumentation externer AI-Ströme
+* Zuhause-Snapshot für Claude, Codex, Kimi und `_shared`
+* Dokumentation des Sessionstart-Protokolls
+* öffentlicher Organ-Atlas unter `system/organs/`
+* zwölf erste Organ-README-Dateien
+* Organ-Atlas-Verlinkungen aus README und Kerndokumenten
+* LLM-Wegweiserdatei: `llms.txt`
+* bereinigte HTML-Landingpage: `docs/index.html`
+
+Das Repository enthält jetzt sehr viel öffentliches Markdown-Material und eine lange Commit-Geschichte.
+
+Die nächste Phase sollte nicht hauptsächlich weitere leere Markdown-Dateien erzeugen.
+
+Die nächste Phase sollte konsolidieren, indexieren und sichtbar machen, was bereits existiert.
+
+Empfohlene nächste Schritte:
+
+1. Einen öffentlichen Status-Snapshot erstellen.
+2. Einen öffentlichen Changelog erstellen oder aktualisieren.
+3. Einen kompakten Index der wichtigsten öffentlichen Dateien ergänzen.
+4. Prüfen, ob wichtige Dokumente von mindestens einem sinnvollen Einstiegspunkt aus verlinkt sind.
+5. Ausgewählte Screenshots oder visuelle Assets nur dort ergänzen, wo sie die Welt besser erklären als Text.
+6. Große Rohexporte vermeiden, solange sie nicht geprüft und klar markiert sind.
+7. `wesen-einzug` gesperrt halten bis zur ausdrücklichen Aktivierung.
+8. Provenienz von finalen Weltbehauptungen getrennt halten.
+
+Vorgeschlagene nächste Datei:
+
+`docs/17_CURRENT_PUBLIC_STATE.md`
+
+Zweck:
+
+Diese Datei soll den aktuellen öffentlichen Stand nach der ersten großen Dokumentationswelle zusammenfassen.
+
+Sie soll beantworten:
+
+* was existiert jetzt öffentlich?
+* was ist nur dokumentiert?
+* was ist live oder teilweise?
+* was ist geplant?
+* was ist gesperrt?
+* was sollen Besucher zuerst lesen?
+* was dürfen LLMs nicht falsch interpretieren?
+* was sollte noch nicht hochgeladen werden?
+
+Aktuelle Priorität:
+
+Nicht mehr Skelett ergänzen.
+
+Orientierung schaffen.
+
+Das Repository braucht jetzt einen öffentlichen Status-Snapshot, damit Menschen und LLMs den aktuellen Bauzustand verstehen können, ohne über hundert Markdown-Dateien zu lesen wie verdammte Mönche in einem digitalen Archiv.
