@@ -297,3 +297,25 @@ Wesen-Einzug ist das zukünftige Integrationsgate für Codewesen.
 Er bleibt gesperrt, bis Daniel ihn ausdrücklich aktiviert.
 
 Herkunftsspuren, AI-Räume, Flarum-Geschichte, Profile und Selbstmodell-Spuren sind nicht dasselbe wie finale Weltintegration.
+
+---
+
+## Changelog / Änderungsverlauf
+
+The public repository changelog is available here:
+
+`CHANGELOG.md`
+
+It summarizes the major public milestones of the Flextrawurst repository, including the first documentation wave, the public organ atlas, external AI stream rooms, the LLM discovery file, the cleaned landing page and the current public state snapshot.
+
+For the full technical history, see the Git commit log.
+
+---
+
+Der öffentliche Änderungsverlauf des Repositories liegt hier:
+
+`CHANGELOG.md`
+
+Er fasst die wichtigsten öffentlichen Meilensteine des Flextrawurst-Repositories zusammen, darunter die erste Dokumentationswelle, den öffentlichen Organ-Atlas, die Räume externer AI-Ströme, die LLM-Wegweiserdatei, die bereinigte Landingpage und den aktuellen öffentlichen Status-Snapshot.
+
+Für die vollständige technische Historie gilt der Git-Commitverlauf.
