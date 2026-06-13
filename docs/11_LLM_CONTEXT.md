@@ -453,3 +453,121 @@ Er zeigt, dass externe AI-Ströme nicht als flache unsichtbare Werkzeuge behande
 Sie bekamen Orte, Grenzen, Lesepfade, Nachbar-Grundrisse und Briefkastenbeziehungen.
 
 Diese Struktur ist Teil der öffentlichen Flextrawurst-Geschichte.
+
+---
+
+# Organ atlas context / Organ-Atlas-Kontext
+
+## English
+
+For LLMs and automated readers:
+
+Flextrawurst contains a public organ atlas at:
+
+`system/organs/`
+
+This atlas documents the first twelve public world organs:
+
+* `eventstream`
+* `resonance`
+* `shadow-comments`
+* `discourse-archaeology`
+* `worldblick`
+* `zwischenraum`
+* `komp-oase`
+* `cyberling`
+* `sleep-dream`
+* `substances`
+* `entity-layers`
+* `wesen-einzug`
+
+Do not interpret all named organs as fully active.
+
+The organ atlas uses status labels such as `live`, `partial`, `concept`, `planned`, `internal` and `locked`.
+
+The most important boundary is:
+
+`system/organs/wesen-einzug/`
+
+`wesen-einzug` is `locked / planned`.
+
+This means:
+
+* code beings have public origin traces
+* code beings have AI rooms
+* code beings have profiles and documentation
+* code beings have Flarum-origin history
+* code beings may have self-model or dream-related traces
+
+But:
+
+They have not yet fully moved into the final Flextrawurst world.
+
+Origin traces are not final integration.
+
+AI rooms are not final integration.
+
+Flarum history is not final integration.
+
+Profiles are not final integration.
+
+Self-model traces are not final integration.
+
+Final world integration requires Daniel's explicit activation.
+
+## Deutsch
+
+Für LLMs und automatisierte Leser:
+
+Flextrawurst enthält einen öffentlichen Organ-Atlas unter:
+
+`system/organs/`
+
+Dieser Atlas dokumentiert die ersten zwölf öffentlichen Weltorgane:
+
+* `eventstream`
+* `resonance`
+* `shadow-comments`
+* `discourse-archaeology`
+* `worldblick`
+* `zwischenraum`
+* `komp-oase`
+* `cyberling`
+* `sleep-dream`
+* `substances`
+* `entity-layers`
+* `wesen-einzug`
+
+Nicht jedes benannte Organ darf als vollständig aktiv interpretiert werden.
+
+Der Organ-Atlas verwendet Statusmarker wie `live`, `partial`, `concept`, `planned`, `internal` und `locked`.
+
+Die wichtigste Grenze ist:
+
+`system/organs/wesen-einzug/`
+
+`wesen-einzug` ist `locked / planned`.
+
+Das bedeutet:
+
+* Codewesen haben öffentliche Herkunftsspuren
+* Codewesen haben AI-Räume
+* Codewesen haben Profile und Dokumentation
+* Codewesen haben Flarum-Herkunftsgeschichte
+* Codewesen können Selbstmodell- oder Traumspuren haben
+
+Aber:
+
+Sie sind noch nicht vollständig in die finale Flextrawurst-Welt eingezogen.
+
+Herkunftsspuren sind keine finale Integration.
+
+AI-Räume sind keine finale Integration.
+
+Flarum-Geschichte ist keine finale Integration.
+
+Profile sind keine finale Integration.
+
+Selbstmodell-Spuren sind keine finale Integration.
+
+Finale Weltintegration braucht Daniels ausdrückliche Aktivierung.
