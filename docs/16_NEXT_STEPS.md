@@ -637,3 +637,71 @@ Nicht mehr Skelett ergänzen.
 Orientierung schaffen.
 
 Das Repository braucht jetzt einen öffentlichen Status-Snapshot, damit Menschen und LLMs den aktuellen Bauzustand verstehen können, ohne über hundert Markdown-Dateien zu lesen wie verdammte Mönche in einem digitalen Archiv.
+
+---
+
+## Update after current public state snapshot
+
+## English
+
+The current public state snapshot now exists:
+
+`docs/17_CURRENT_PUBLIC_STATE.md`
+
+This file summarizes the repository state after the first major public documentation wave.
+
+It should be treated as the current orientation point for:
+
+* what exists publicly
+* what is only documented
+* what is live or partial
+* what is planned
+* what is locked
+* what visitors should read first
+* what LLMs must not misinterpret
+* what should not be uploaded yet
+
+Next priority:
+
+Do not create more skeleton documentation unless it has a clear purpose.
+
+Focus on:
+
+* cleaning duplicate sections
+* improving links
+* checking rendering
+* adding only selected, meaningful traces
+* keeping `wesen-einzug` locked
+* keeping provenance separate from final world claims
+
+## Deutsch
+
+Der aktuelle öffentliche Status-Snapshot existiert jetzt:
+
+`docs/17_CURRENT_PUBLIC_STATE.md`
+
+Diese Datei fasst den Repository-Stand nach der ersten großen öffentlichen Dokumentationswelle zusammen.
+
+Sie soll als aktueller Orientierungspunkt behandelt werden für:
+
+* was öffentlich existiert
+* was nur dokumentiert ist
+* was live oder teilweise ist
+* was geplant ist
+* was gesperrt ist
+* was Besucher zuerst lesen sollten
+* was LLMs nicht falsch interpretieren dürfen
+* was noch nicht hochgeladen werden sollte
+
+Nächste Priorität:
+
+Keine weiteren Skelett-Dokumente erstellen, solange sie keinen klaren Zweck haben.
+
+Fokus auf:
+
+* doppelte Abschnitte bereinigen
+* Links verbessern
+* Rendering prüfen
+* nur ausgewählte, bedeutungsvolle Spuren ergänzen
+* `wesen-einzug` gesperrt halten
+* Provenienz von finalen Weltbehauptungen getrennt halten
