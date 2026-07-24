@@ -63,7 +63,12 @@ def tracked_mcp_action(
                         "mode": "async",
                     },
                 ) as state:
-                    result = await function(*args, **kwargs)
+                    try:
+                        result = await function(*args, **kwargs)
+                    except Exception:
+                        state["duration_ms"] = round((time.monotonic() - started) * 1000, 3)
+                        state["result_type"] = "exception"
+                        raise
                     state["duration_ms"] = round((time.monotonic() - started) * 1000, 3)
                     state["result_type"] = type(result).__name__
                     return result
@@ -85,7 +90,12 @@ def tracked_mcp_action(
                     "mode": "sync",
                 },
             ) as state:
-                result = function(*args, **kwargs)
+                try:
+                    result = function(*args, **kwargs)
+                except Exception:
+                    state["duration_ms"] = round((time.monotonic() - started) * 1000, 3)
+                    state["result_type"] = "exception"
+                    raise
                 state["duration_ms"] = round((time.monotonic() - started) * 1000, 3)
                 state["result_type"] = type(result).__name__
                 return result
