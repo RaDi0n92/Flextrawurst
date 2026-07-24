@@ -14,7 +14,7 @@ def _sha256(data: bytes) -> str:
 
 
 class TrackedFileOps:
-    """Werkraum-Dateioperationen, die jede echte Aktion protokollieren."""
+    """Werkraum-Dateioperationen, die jede echte oder blockierte Aktion protokollieren."""
 
     def __init__(self, history: ActionHistory):
         self.history = history
@@ -24,9 +24,20 @@ class TrackedFileOps:
         )
         self.allowed_roots = [Path(root).resolve() for root in roots.split(",") if root.strip()]
 
-    def _resolve(self, path: str) -> Path:
+    def _resolve(self, path: str, *, action: str, session_id: str | None) -> Path:
         candidate = Path(path).expanduser().resolve()
         if not any(candidate == root or root in candidate.parents for root in self.allowed_roots):
+            self.history.append(
+                action=action,
+                target=str(candidate),
+                status="blocked",
+                session_id=session_id,
+                completeness="aborted",
+                details={
+                    "reason": "path_outside_allowed_roots",
+                    "allowed_roots": [str(root) for root in self.allowed_roots],
+                },
+            )
             raise PermissionError(f"Pfad liegt außerhalb erlaubter Wurzeln: {candidate}")
         return candidate
 
@@ -39,7 +50,7 @@ class TrackedFileOps:
         max_lines: int | None = None,
         action: str = "read_file",
     ) -> dict[str, Any]:
-        target = self._resolve(path)
+        target = self._resolve(path, action=action, session_id=session_id)
         completeness = "complete" if start_line == 1 and max_lines is None else "partial"
         with self.history.recorded_action(
             action=action,
@@ -78,8 +89,16 @@ class TrackedFileOps:
         overwrite: bool = False,
         action: str = "write_file",
     ) -> dict[str, Any]:
-        target = self._resolve(path)
+        target = self._resolve(path, action=action, session_id=session_id)
         if target.exists() and not overwrite:
+            self.history.append(
+                action=action,
+                target=str(target),
+                status="blocked",
+                session_id=session_id,
+                completeness="aborted",
+                details={"reason": "overwrite_not_explicit"},
+            )
             raise FileExistsError(f"Datei existiert bereits: {target}")
 
         encoded = content.encode("utf-8")
@@ -122,7 +141,7 @@ class TrackedFileOps:
         session_id: str | None = None,
         action: str = "append_file",
     ) -> dict[str, Any]:
-        target = self._resolve(path)
+        target = self._resolve(path, action=action, session_id=session_id)
         encoded = content.encode("utf-8")
         with self.history.recorded_action(
             action=action,
