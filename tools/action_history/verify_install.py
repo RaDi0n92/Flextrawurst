@@ -17,13 +17,15 @@ def main() -> int:
         history = ActionHistory(Path(tmp) / "history.jsonl", actor="GPT-5.6-sol-hoch")
         ops = TrackedFileOps(history)
         target = root / "_gpt" / "install_probe.md"
+        history.begin_session("install-verification")
         ops.write_text(str(target), "probe\n", session_id="install-verification")
         ops.read_text(str(target), session_id="install-verification")
         ops.reread_text(str(target), session_id="install-verification")
+        history.end_session("install-verification")
         verification = history.verify()
         summary = history.summary(session_id="install-verification")
-        if verification["events"] != 3 or summary["event_count"] != 3:
-            raise RuntimeError("Installations-Gegenprobe hat nicht exakt drei Ereignisse erzeugt")
+        if verification["events"] != 5 or summary["event_count"] != 5:
+            raise RuntimeError("Installations-Gegenprobe hat nicht exakt fünf Ereignisse erzeugt")
         print(json.dumps({"ok": True, "verification": verification, "summary": summary}, ensure_ascii=False))
     return 0
 
