@@ -3,7 +3,8 @@ from __future__ import annotations
 from typing import Any
 
 from .history import ActionHistory
-from .lifecycle import startup_session
+from .lifecycle import begin_session_once, end_session_once, startup_session
+from .reporting import build_session_report
 from .tracked_file_ops import TrackedFileOps
 
 REQUIRED_TOOLS = (
@@ -11,6 +12,7 @@ REQUIRED_TOOLS = (
     "history_startup",
     "history_recent",
     "history_summary",
+    "history_session_report",
     "history_verify",
     "history_capabilities",
     "history_record_action",
@@ -42,8 +44,8 @@ def register_action_history_tools(
         session_id: str,
         details: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
-        """Eröffnet eine Session idempotent und schreibt genau ein session.begin-Ereignis."""
-        return active_history.begin_session(session_id, details=details)
+        """Eröffnet eine Session rennsicher und schreibt höchstens ein session.begin-Ereignis."""
+        return begin_session_once(active_history, session_id, details=details)
 
     def history_startup(
         session_id: str = "unknown-session",
@@ -71,8 +73,12 @@ def register_action_history_tools(
         )
 
     def history_summary(session_id: str | None = None) -> dict[str, Any]:
-        """Erzeugt ein Fazit ausschließlich aus protokollierten Aktionen."""
+        """Erzeugt eine kompakte Bilanz ausschließlich aus protokollierten Aktionen."""
         return active_history.summary(session_id=session_id)
+
+    def history_session_report(session_id: str) -> dict[str, Any]:
+        """Erzeugt ein menschenlesbares Chat-Fazit ohne Dateiinhalte aus der Hash-Kette."""
+        return build_session_report(active_history, session_id)
 
     def history_verify() -> dict[str, Any]:
         """Prüft die vollständige Hash-Kette der append-only Historie."""
@@ -85,7 +91,8 @@ def register_action_history_tools(
             "required_tools": list(REQUIRED_TOOLS),
             "history_path": str(active_history.path),
             "rule": "Alle Dateiaktionen über tracked_*; alle übrigen Aktionen über history_record_action.",
-            "startup_rule": "history_startup eröffnet die Session automatisch und idempotent.",
+            "startup_rule": "history_startup eröffnet die Session automatisch, rennsicher und idempotent.",
+            "report_rule": "history_end_session und history_session_report erzeugen das Fazit aus der Hash-Kette.",
             "integration": "register_action_history_tools(existing_mcp) bindet den Körper in den bestehenden Server ein.",
         }
 
@@ -113,8 +120,9 @@ def register_action_history_tools(
         session_id: str,
         details: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
-        """Schließt eine Session idempotent und speichert ihr protokollbasiertes Fazit."""
-        return active_history.end_session(session_id, details=details)
+        """Schließt die Session rennsicher und liefert sofort ihr protokollbasiertes Fazit."""
+        ended = end_session_once(active_history, session_id, details=details)
+        return {**ended, "report": build_session_report(active_history, session_id)}
 
     def tracked_read_file(
         path: str,
@@ -164,6 +172,7 @@ def register_action_history_tools(
         history_startup,
         history_recent,
         history_summary,
+        history_session_report,
         history_verify,
         history_capabilities,
         history_record_action,
