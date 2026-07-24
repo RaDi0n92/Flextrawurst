@@ -33,24 +33,46 @@ def tracked_mcp_action(
     target_argument: str | None = None,
     completeness: str | None = "complete",
     static_details: dict[str, Any] | None = None,
+    require_session_id: bool = True,
 ) -> Callable[[Callable[P, R]], Callable[P, R]]:
     """Umschließt bestehende sync/async MCP-Funktionen mit beweisbarer Aktionshistorie."""
 
     def decorator(function: Callable[P, R]) -> Callable[P, R]:
         signature = inspect.signature(function)
 
-        def call_metadata(args: tuple[Any, ...], kwargs: dict[str, Any]) -> tuple[str, str | None]:
+        def call_metadata(args: tuple[Any, ...], kwargs: dict[str, Any]) -> tuple[str | None, str | None]:
             bound = signature.bind_partial(*args, **kwargs)
-            session_value = bound.arguments.get(session_argument, "unknown-session")
-            session_id = str(session_value or "unknown-session")
+            session_value = bound.arguments.get(session_argument)
+            session_id = None if session_value is None else str(session_value)
             target = _target_from_call(signature, args, kwargs, target_argument)
             return session_id, target
+
+        def require_session(session_id: str | None, target: str | None, mode: str) -> str:
+            if not require_session_id:
+                return session_id or "unassigned"
+            if session_id and session_id != "unknown-session":
+                return session_id
+            history.append(
+                action=action,
+                target=target,
+                status="blocked",
+                session_id="unassigned",
+                completeness="aborted",
+                details={
+                    **(static_details or {}),
+                    "reason": "missing_or_unknown_session_id",
+                    "function": function.__qualname__,
+                    "mode": mode,
+                },
+            )
+            raise ValueError("Eine echte session_id ist für MCP-Aktionen erforderlich")
 
         if inspect.iscoroutinefunction(function):
 
             @functools.wraps(function)
             async def async_wrapper(*args: P.args, **kwargs: P.kwargs):
-                session_id, target = call_metadata(args, kwargs)
+                raw_session_id, target = call_metadata(args, kwargs)
+                session_id = require_session(raw_session_id, target, "async")
                 started = time.monotonic()
                 with history.recorded_action(
                     action=action,
@@ -77,7 +99,8 @@ def tracked_mcp_action(
 
         @functools.wraps(function)
         def sync_wrapper(*args: P.args, **kwargs: P.kwargs):
-            session_id, target = call_metadata(args, kwargs)
+            raw_session_id, target = call_metadata(args, kwargs)
+            session_id = require_session(raw_session_id, target, "sync")
             started = time.monotonic()
             with history.recorded_action(
                 action=action,
