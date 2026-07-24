@@ -4,6 +4,7 @@ import os
 from typing import Any
 
 from .history import ActionHistory
+from .lifecycle import startup_session
 from .tracked_file_ops import TrackedFileOps
 
 try:
@@ -41,8 +42,12 @@ def history_begin_session(session_id: str, details: dict[str, Any] | None = None
 
 @mcp.tool()
 def history_startup(session_id: str = "unknown-session", recent_limit: int = 30) -> dict[str, Any]:
-    """Liefert aktuelle, vorherige und global letzte Aktionen samt Integritätsstatus."""
-    return history.startup_context(session_id=session_id, recent_limit=recent_limit)
+    """Eröffnet die Session selbst und liefert aktuelle, vorherige und globale Aktionen."""
+    return startup_session(
+        history,
+        session_id=session_id,
+        recent_limit=recent_limit,
+    )
 
 
 @mcp.tool()
@@ -81,6 +86,7 @@ def history_capabilities() -> dict[str, Any]:
         "required_tools": REQUIRED_TOOLS,
         "history_path": str(history.path),
         "rule": "Alle Dateiaktionen über tracked_*; alle übrigen Aktionen über history_record_action.",
+        "startup_rule": "history_startup eröffnet die Session automatisch und idempotent.",
     }
 
 
