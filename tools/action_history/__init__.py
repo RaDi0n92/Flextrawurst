@@ -1,3 +1,4 @@
+from .decorators import tracked_mcp_action
 from .history import ActionHistory, HistoryIntegrityError
 from .lifecycle import startup_session
 from .toolset import REQUIRED_TOOLS, register_action_history_tools
@@ -10,4 +11,5 @@ __all__ = [
     "REQUIRED_TOOLS",
     "register_action_history_tools",
     "startup_session",
+    "tracked_mcp_action",
 ]
