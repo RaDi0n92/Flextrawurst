@@ -62,12 +62,15 @@ class ActionHistory:
                 ) from exc
         return events
 
-    def verify(self) -> dict[str, Any]:
+    def _all_events(self) -> list[dict[str, Any]]:
         with self.path.open("r", encoding="utf-8") as handle:
             fcntl.flock(handle.fileno(), fcntl.LOCK_SH)
             events = self._read_unlocked(handle)
             fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
+        return events
 
+    def verify(self) -> dict[str, Any]:
+        events = self._all_events()
         previous_hash: str | None = None
         for index, event in enumerate(events, start=1):
             actual_hash = event.get("event_hash")
@@ -141,11 +144,7 @@ class ActionHistory:
         if not 1 <= limit <= 5000:
             raise ValueError("limit muss zwischen 1 und 5000 liegen")
 
-        with self.path.open("r", encoding="utf-8") as handle:
-            fcntl.flock(handle.fileno(), fcntl.LOCK_SH)
-            events = self._read_unlocked(handle)
-            fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
-
+        events = self._all_events()
         filtered = [
             event
             for event in events
@@ -154,6 +153,19 @@ class ActionHistory:
             and (status is None or event.get("status") == status)
         ]
         return filtered[-limit:]
+
+    def session_ids(self, *, limit: int = 100) -> list[str]:
+        sessions: list[str] = []
+        for event in self._all_events():
+            session_id = str(event.get("session_id") or "unknown-session")
+            if session_id not in sessions:
+                sessions.append(session_id)
+        return sessions[-limit:]
+
+    def previous_session_id(self, current_session_id: str | None) -> str | None:
+        sessions = self.session_ids(limit=5000)
+        candidates = [session for session in sessions if session != current_session_id]
+        return candidates[-1] if candidates else None
 
     def summary(self, *, session_id: str | None = None) -> dict[str, Any]:
         events = self.list_events(session_id=session_id, limit=5000)
@@ -179,24 +191,69 @@ class ActionHistory:
             "last_event": events[-1] if events else None,
         }
 
+    def begin_session(
+        self,
+        session_id: str,
+        *,
+        details: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
+        existing = self.list_events(session_id=session_id, action="session.begin", limit=1)
+        if existing:
+            return {"created": False, "event": existing[-1]}
+        event = self.append(
+            action="session.begin",
+            session_id=session_id,
+            completeness="complete",
+            details=details,
+        )
+        return {"created": True, "event": event}
+
+    def end_session(
+        self,
+        session_id: str,
+        *,
+        details: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
+        existing = self.list_events(session_id=session_id, action="session.end", limit=1)
+        if existing:
+            return {"created": False, "event": existing[-1]}
+        event = self.append(
+            action="session.end",
+            session_id=session_id,
+            completeness="complete",
+            details={**(details or {}), "summary": self.summary(session_id=session_id)},
+        )
+        return {"created": True, "event": event}
+
     def startup_context(
         self,
         *,
         session_id: str | None = None,
         recent_limit: int = 30,
     ) -> dict[str, Any]:
-        recent = self.list_events(session_id=session_id, limit=recent_limit)
+        current = self.list_events(session_id=session_id, limit=recent_limit)
+        global_recent = self.list_events(limit=recent_limit)
+        previous_session_id = self.previous_session_id(session_id)
+        previous = (
+            self.list_events(session_id=previous_session_id, limit=recent_limit)
+            if previous_session_id
+            else []
+        )
+        visible = current or previous or global_recent
         return {
             "actor": self.actor,
             "history_path": str(self.path),
             "session_id": session_id,
-            "recent_actions": recent,
+            "current_session_actions": current,
+            "previous_session_id": previous_session_id,
+            "previous_session_actions": previous,
+            "global_recent_actions": global_recent,
             "failed_or_blocked": [
-                event for event in recent if event.get("status") != "success"
+                event for event in visible if event.get("status") != "success"
             ],
             "partial_or_unknown": [
                 event
-                for event in recent
+                for event in visible
                 if event.get("completeness") in {"partial", "unknown", "aborted"}
             ],
             "integrity": self.verify(),
