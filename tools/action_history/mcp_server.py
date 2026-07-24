@@ -14,11 +14,14 @@ except ImportError as exc:  # pragma: no cover
     ) from exc
 
 REQUIRED_TOOLS = [
+    "history_begin_session",
     "history_startup",
     "history_recent",
     "history_summary",
     "history_verify",
     "history_capabilities",
+    "history_record_action",
+    "history_end_session",
     "tracked_read_file",
     "tracked_write_file",
     "tracked_append_file",
@@ -31,8 +34,14 @@ files = TrackedFileOps(history)
 
 
 @mcp.tool()
+def history_begin_session(session_id: str, details: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Eröffnet eine Session idempotent und schreibt genau ein session.begin-Ereignis."""
+    return history.begin_session(session_id, details=details)
+
+
+@mcp.tool()
 def history_startup(session_id: str = "unknown-session", recent_limit: int = 30) -> dict[str, Any]:
-    """Liefert beim Sessionstart Historie, Fehler, Teillesungen und Integritätsstatus."""
+    """Liefert aktuelle, vorherige und global letzte Aktionen samt Integritätsstatus."""
     return history.startup_context(session_id=session_id, recent_limit=recent_limit)
 
 
@@ -71,8 +80,36 @@ def history_capabilities() -> dict[str, Any]:
         "actor": history.actor,
         "required_tools": REQUIRED_TOOLS,
         "history_path": str(history.path),
-        "rule": "Dateiaktionen nur über tracked_* ausführen.",
+        "rule": "Alle Dateiaktionen über tracked_*; alle übrigen Aktionen über history_record_action.",
     }
+
+
+@mcp.tool()
+def history_record_action(
+    action: str,
+    session_id: str,
+    target: str | None = None,
+    status: str = "success",
+    completeness: str | None = None,
+    details: dict[str, Any] | None = None,
+    parent_event_id: str | None = None,
+) -> dict[str, Any]:
+    """Protokolliert eine Nicht-Dateiaktion eines anderen MCP-Werkzeugs."""
+    return history.append(
+        action=action,
+        target=target,
+        status=status,
+        session_id=session_id,
+        completeness=completeness,
+        details=details,
+        parent_event_id=parent_event_id,
+    )
+
+
+@mcp.tool()
+def history_end_session(session_id: str, details: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Schließt eine Session idempotent und speichert ihr protokollbasiertes Fazit."""
+    return history.end_session(session_id, details=details)
 
 
 @mcp.tool()
