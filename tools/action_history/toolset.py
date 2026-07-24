@@ -3,7 +3,12 @@ from __future__ import annotations
 from typing import Any
 
 from .history import ActionHistory
-from .lifecycle import begin_session_once, end_session_once, startup_session
+from .lifecycle import (
+    begin_session_once,
+    end_session_once,
+    session_action,
+    startup_session,
+)
 from .reporting import build_session_report
 from .tracked_file_ops import TrackedFileOps
 
@@ -81,7 +86,7 @@ def register_action_history_tools(
         return build_session_report(active_history, session_id)
 
     def history_verify() -> dict[str, Any]:
-        """Prüft die vollständige Hash-Kette der append-only Historie."""
+        """Prüft Hash-Kette und unabhängigen atomischen Endanker."""
         return active_history.verify()
 
     def history_capabilities() -> dict[str, Any]:
@@ -90,10 +95,13 @@ def register_action_history_tools(
             "actor": active_history.actor,
             "required_tools": list(REQUIRED_TOOLS),
             "history_path": str(active_history.path),
+            "checkpoint_path": str(active_history.checkpoint_path),
             "rule": "Alle Dateiaktionen über tracked_*; alle übrigen Aktionen über history_record_action.",
             "startup_rule": "history_startup erzeugt bei Bedarf eine echte Session-ID und eröffnet sie rennsicher.",
             "session_rule": "Die zurückgegebene session_id ist für jede folgende Arbeitsaktion verpflichtend.",
+            "closure_rule": "Laufende Aktionen und Sessionabschluss teilen denselben Verschluss; geschlossene Sessions nehmen keine Arbeit mehr an.",
             "report_rule": "history_end_session und history_session_report erzeugen das Fazit aus der Hash-Kette.",
+            "integrity_rule": "history_verify prüft innere Hash-Kette und unabhängigen Endanker gegen Tail-Kürzung.",
             "integration": "register_action_history_tools(existing_mcp) bindet den Körper in den bestehenden Server ein.",
         }
 
@@ -107,17 +115,21 @@ def register_action_history_tools(
         parent_event_id: str | None = None,
     ) -> dict[str, Any]:
         """Protokolliert eine Nicht-Dateiaktion eines anderen MCP-Werkzeugs."""
-        if not session_id or session_id == "unknown-session":
-            raise ValueError("Eine echte session_id ist erforderlich")
-        return active_history.append(
+        with session_action(
+            active_history,
+            session_id,
             action=action,
             target=target,
-            status=status,
-            session_id=session_id,
-            completeness=completeness,
-            details=details,
-            parent_event_id=parent_event_id,
-        )
+        ) as active_session_id:
+            return active_history.append(
+                action=action,
+                target=target,
+                status=status,
+                session_id=active_session_id,
+                completeness=completeness,
+                details=details,
+                parent_event_id=parent_event_id,
+            )
 
     def history_end_session(
         session_id: str,
