@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import contextlib
 import functools
 import inspect
 import time
@@ -7,6 +8,7 @@ from collections.abc import Callable
 from typing import Any, ParamSpec, TypeVar, cast
 
 from .history import ActionHistory
+from .lifecycle import session_action
 
 P = ParamSpec("P")
 R = TypeVar("R")
@@ -67,12 +69,52 @@ def tracked_mcp_action(
             )
             raise ValueError("Eine echte session_id ist für MCP-Aktionen erforderlich")
 
+        def action_lock(session_id: str, target: str | None):
+            if not require_session_id:
+                return contextlib.nullcontext(session_id)
+            return session_action(
+                history,
+                session_id,
+                action=action,
+                target=target,
+            )
+
         if inspect.iscoroutinefunction(function):
 
             @functools.wraps(function)
             async def async_wrapper(*args: P.args, **kwargs: P.kwargs):
                 raw_session_id, target = call_metadata(args, kwargs)
                 session_id = require_session(raw_session_id, target, "async")
+                with action_lock(session_id, target):
+                    started = time.monotonic()
+                    with history.recorded_action(
+                        action=action,
+                        target=target,
+                        session_id=session_id,
+                        completeness=completeness,
+                        details={
+                            **(static_details or {}),
+                            "function": function.__qualname__,
+                            "mode": "async",
+                        },
+                    ) as state:
+                        try:
+                            result = await function(*args, **kwargs)
+                        except Exception:
+                            state["duration_ms"] = round((time.monotonic() - started) * 1000, 3)
+                            state["result_type"] = "exception"
+                            raise
+                        state["duration_ms"] = round((time.monotonic() - started) * 1000, 3)
+                        state["result_type"] = type(result).__name__
+                        return result
+
+            return cast(Callable[P, R], async_wrapper)
+
+        @functools.wraps(function)
+        def sync_wrapper(*args: P.args, **kwargs: P.kwargs):
+            raw_session_id, target = call_metadata(args, kwargs)
+            session_id = require_session(raw_session_id, target, "sync")
+            with action_lock(session_id, target):
                 started = time.monotonic()
                 with history.recorded_action(
                     action=action,
@@ -82,11 +124,11 @@ def tracked_mcp_action(
                     details={
                         **(static_details or {}),
                         "function": function.__qualname__,
-                        "mode": "async",
+                        "mode": "sync",
                     },
                 ) as state:
                     try:
-                        result = await function(*args, **kwargs)
+                        result = function(*args, **kwargs)
                     except Exception:
                         state["duration_ms"] = round((time.monotonic() - started) * 1000, 3)
                         state["result_type"] = "exception"
@@ -94,34 +136,6 @@ def tracked_mcp_action(
                     state["duration_ms"] = round((time.monotonic() - started) * 1000, 3)
                     state["result_type"] = type(result).__name__
                     return result
-
-            return cast(Callable[P, R], async_wrapper)
-
-        @functools.wraps(function)
-        def sync_wrapper(*args: P.args, **kwargs: P.kwargs):
-            raw_session_id, target = call_metadata(args, kwargs)
-            session_id = require_session(raw_session_id, target, "sync")
-            started = time.monotonic()
-            with history.recorded_action(
-                action=action,
-                target=target,
-                session_id=session_id,
-                completeness=completeness,
-                details={
-                    **(static_details or {}),
-                    "function": function.__qualname__,
-                    "mode": "sync",
-                },
-            ) as state:
-                try:
-                    result = function(*args, **kwargs)
-                except Exception:
-                    state["duration_ms"] = round((time.monotonic() - started) * 1000, 3)
-                    state["result_type"] = "exception"
-                    raise
-                state["duration_ms"] = round((time.monotonic() - started) * 1000, 3)
-                state["result_type"] = type(result).__name__
-                return result
 
         return cast(Callable[P, R], sync_wrapper)
 
