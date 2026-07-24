@@ -44,6 +44,14 @@ jobs:
       - name: MCP-Werkzeugvertrag prüfen
         run: |
           python - <<'PY'
+          import os
+          import tempfile
+          from pathlib import Path
+
+          isolated_root = Path(tempfile.mkdtemp(prefix="action-history-ci-"))
+          os.environ["FLEXTRAWURST_ACTION_HISTORY"] = str(isolated_root / "history.jsonl")
+          os.environ["FLEXTRAWURST_HISTORY_ALLOWED_ROOTS"] = str(isolated_root)
+
           from tools.action_history.mcp_server import REQUIRED_TOOLS
 
           required = {
@@ -60,6 +68,10 @@ jobs:
               "tracked_append_file",
               "tracked_reread_own_file",
           }
-          assert set(REQUIRED_TOOLS) == required
+          actual = set(REQUIRED_TOOLS)
+          if actual != required:
+              raise SystemExit(
+                  f"Werkzeugvertrag abweichend; fehlt={sorted(required - actual)} extra={sorted(actual - required)}"
+              )
           print(f"Werkzeugvertrag vollständig: {len(required)} Werkzeuge")
           PY
