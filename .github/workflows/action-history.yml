@@ -41,7 +41,7 @@ jobs:
       - name: Installationsprobe ausführen
         run: python -m tools.action_history.verify_install
 
-      - name: MCP-Werkzeugvertrag prüfen
+      - name: Werkzeugkörper in echtem FastMCP prüfen
         run: |
           python - <<'PY'
           import os
@@ -52,26 +52,19 @@ jobs:
           os.environ["FLEXTRAWURST_ACTION_HISTORY"] = str(isolated_root / "history.jsonl")
           os.environ["FLEXTRAWURST_HISTORY_ALLOWED_ROOTS"] = str(isolated_root)
 
-          from tools.action_history.mcp_server import REQUIRED_TOOLS
+          from mcp.server.fastmcp import FastMCP
+          from tools.action_history import ActionHistory, TrackedFileOps
+          from tools.action_history.toolset import REQUIRED_TOOLS, register_action_history_tools
 
-          required = {
-              "history_begin_session",
-              "history_startup",
-              "history_recent",
-              "history_summary",
-              "history_verify",
-              "history_capabilities",
-              "history_record_action",
-              "history_end_session",
-              "tracked_read_file",
-              "tracked_write_file",
-              "tracked_append_file",
-              "tracked_reread_own_file",
-          }
-          actual = set(REQUIRED_TOOLS)
-          if actual != required:
+          history = ActionHistory(isolated_root / "history.jsonl", actor="GPT-5.6-sol-hoch")
+          files = TrackedFileOps(history)
+          server = FastMCP("action-history-ci")
+          registered = register_action_history_tools(server, history=history, files=files)
+
+          actual = tuple(registered)
+          if actual != REQUIRED_TOOLS:
               raise SystemExit(
-                  f"Werkzeugvertrag abweichend; fehlt={sorted(required - actual)} extra={sorted(actual - required)}"
+                  f"Werkzeugvertrag abweichend; erwartet={REQUIRED_TOOLS!r} erhalten={actual!r}"
               )
-          print(f"Werkzeugvertrag vollständig: {len(required)} Werkzeuge")
+          print(f"Echter FastMCP hat alle {len(REQUIRED_TOOLS)} Werkzeuge registriert")
           PY
