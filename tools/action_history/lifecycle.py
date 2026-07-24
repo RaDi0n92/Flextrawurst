@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import contextlib
+import datetime as dt
 import fcntl
 import os
+import uuid
 from collections.abc import Iterator
 from pathlib import Path
 from typing import Any
@@ -23,13 +25,19 @@ def _lifecycle_lock(history: ActionHistory) -> Iterator[None]:
             fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
 
 
+def generate_session_id(prefix: str = "chatgpt") -> str:
+    timestamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    return f"{prefix}-{timestamp}-{uuid.uuid4().hex[:12]}"
+
+
 def begin_session_once(
     history: ActionHistory,
     session_id: str,
     *,
     details: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """Erzeugt auch bei parallelen Aufrufen höchstens ein session.begin-Ereignis."""
+    if not session_id or session_id == "unknown-session":
+        raise ValueError("Eine echte session_id ist erforderlich")
     with _lifecycle_lock(history):
         return history.begin_session(session_id, details=details)
 
@@ -40,7 +48,8 @@ def end_session_once(
     *,
     details: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """Erzeugt auch bei parallelen Aufrufen höchstens ein session.end-Ereignis."""
+    if not session_id or session_id == "unknown-session":
+        raise ValueError("Eine echte session_id ist erforderlich")
     with _lifecycle_lock(history):
         return history.end_session(session_id, details=details)
 
@@ -48,18 +57,23 @@ def end_session_once(
 def startup_session(
     history: ActionHistory,
     *,
-    session_id: str,
+    session_id: str | None = None,
     recent_limit: int = 30,
     details: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """Eröffnet eine Session rennsicher und liefert danach ihren vollständigen Startkontext."""
+    generated = not session_id or session_id == "unknown-session"
+    resolved_session_id = generate_session_id() if generated else str(session_id)
     session_begin = begin_session_once(
         history,
-        session_id,
-        details={"source": "history_startup", **(details or {})},
+        resolved_session_id,
+        details={"source": "history_startup", "generated_session_id": generated, **(details or {})},
     )
     context = history.startup_context(
-        session_id=session_id,
+        session_id=resolved_session_id,
         recent_limit=recent_limit,
     )
-    return {"session_begin": session_begin, **context}
+    return {
+        "session_begin": session_begin,
+        "generated_session_id": generated,
+        **context,
+    }
