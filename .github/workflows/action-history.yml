@@ -1,0 +1,65 @@
+name: Action History Gegenprobe
+
+on:
+  push:
+    paths:
+      - "tools/action_history/**"
+      - ".github/workflows/action-history.yml"
+  pull_request:
+    paths:
+      - "tools/action_history/**"
+      - ".github/workflows/action-history.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: tools/action_history/requirements.txt
+
+      - name: Abhängigkeiten installieren
+        run: python -m pip install -r tools/action_history/requirements.txt
+
+      - name: Syntax vollständig prüfen
+        run: python -m compileall -q tools/action_history
+
+      - name: Gegnerische Tests ausführen
+        run: python -m pytest -q tools/action_history/tests
+
+      - name: Installationsprobe ausführen
+        run: python -m tools.action_history.verify_install
+
+      - name: MCP-Werkzeugvertrag prüfen
+        run: |
+          python - <<'PY'
+          from tools.action_history.mcp_server import REQUIRED_TOOLS
+
+          required = {
+              "history_begin_session",
+              "history_startup",
+              "history_recent",
+              "history_summary",
+              "history_verify",
+              "history_capabilities",
+              "history_record_action",
+              "history_end_session",
+              "tracked_read_file",
+              "tracked_write_file",
+              "tracked_append_file",
+              "tracked_reread_own_file",
+          }
+          assert set(REQUIRED_TOOLS) == required
+          print(f"Werkzeugvertrag vollständig: {len(required)} Werkzeuge")
+          PY
