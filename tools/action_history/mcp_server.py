@@ -13,6 +13,18 @@ except ImportError as exc:  # pragma: no cover
         "Das Python-Paket 'mcp' fehlt. Installiere es im VPS-Venv, bevor der Server gestartet wird."
     ) from exc
 
+REQUIRED_TOOLS = [
+    "history_startup",
+    "history_recent",
+    "history_summary",
+    "history_verify",
+    "history_capabilities",
+    "tracked_read_file",
+    "tracked_write_file",
+    "tracked_append_file",
+    "tracked_reread_own_file",
+]
+
 mcp = FastMCP("flextrawurst-action-history")
 history = ActionHistory()
 files = TrackedFileOps(history)
@@ -50,6 +62,17 @@ def history_summary(session_id: str | None = None) -> dict[str, Any]:
 def history_verify() -> dict[str, Any]:
     """Prüft die vollständige Hash-Kette der append-only Historie."""
     return history.verify()
+
+
+@mcp.tool()
+def history_capabilities() -> dict[str, Any]:
+    """Liefert den verpflichtenden Werkzeugvertrag für die Client-Integration."""
+    return {
+        "actor": history.actor,
+        "required_tools": REQUIRED_TOOLS,
+        "history_path": str(history.path),
+        "rule": "Dateiaktionen nur über tracked_* ausführen.",
+    }
 
 
 @mcp.tool()
