@@ -77,6 +77,26 @@ def _session_is_closed(history: ActionHistory, session_id: str) -> bool:
     return bool(history.list_events(session_id=session_id, action="session.end", limit=1))
 
 
+def _real_session_ids(history: ActionHistory) -> list[str]:
+    sessions: list[str] = []
+    for event in history.list_events(limit=5000):
+        if event.get("action") != "session.begin":
+            continue
+        session_id = str(event.get("session_id") or "")
+        if session_id and session_id not in sessions:
+            sessions.append(session_id)
+    return sessions
+
+
+def _previous_real_session_id(history: ActionHistory, current_session_id: str) -> str | None:
+    candidates = [
+        session_id
+        for session_id in _real_session_ids(history)
+        if session_id != current_session_id
+    ]
+    return candidates[-1] if candidates else None
+
+
 def _record_closed_attempt(
     history: ActionHistory,
     session_id: str,
@@ -144,6 +164,45 @@ def end_session_once(
         return history.end_session(active_session_id, details=details)
 
 
+def _startup_context(
+    history: ActionHistory,
+    session_id: str,
+    recent_limit: int,
+) -> dict[str, Any]:
+    current = history.list_events(session_id=session_id, limit=recent_limit)
+    previous_session_id = _previous_real_session_id(history, session_id)
+    previous = (
+        history.list_events(session_id=previous_session_id, limit=recent_limit)
+        if previous_session_id
+        else []
+    )
+    global_recent = history.list_events(limit=recent_limit)
+    relevant = previous + current + [
+        event
+        for event in global_recent
+        if event.get("session_id") in {"system-audit", "unassigned"}
+    ]
+    return {
+        "actor": history.actor,
+        "history_path": str(history.path),
+        "checkpoint_path": str(history.checkpoint_path),
+        "session_id": session_id,
+        "current_session_actions": current,
+        "previous_session_id": previous_session_id,
+        "previous_session_actions": previous,
+        "global_recent_actions": global_recent,
+        "failed_or_blocked": [
+            event for event in relevant if event.get("status") != "success"
+        ],
+        "partial_or_unknown": [
+            event
+            for event in relevant
+            if event.get("completeness") in {"partial", "unknown", "aborted"}
+        ],
+        "integrity": history.verify(),
+    }
+
+
 def startup_session(
     history: ActionHistory,
     *,
@@ -151,19 +210,34 @@ def startup_session(
     recent_limit: int = 30,
     details: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    requested_session_id = session_id
+    replaced_closed_session_id: str | None = None
     generated = not session_id or session_id == "unknown-session"
+
+    if session_id and session_id != "unknown-session" and _session_is_closed(history, session_id):
+        replaced_closed_session_id = session_id
+        generated = True
+
     resolved_session_id = generate_session_id() if generated else str(session_id)
     session_begin = begin_session_once(
         history,
         resolved_session_id,
-        details={"source": "history_startup", "generated_session_id": generated, **(details or {})},
+        details={
+            "source": "history_startup",
+            "generated_session_id": generated,
+            "requested_session_id": requested_session_id,
+            "replaced_closed_session_id": replaced_closed_session_id,
+            **(details or {}),
+        },
     )
-    context = history.startup_context(
-        session_id=resolved_session_id,
-        recent_limit=recent_limit,
+    context = _startup_context(
+        history,
+        resolved_session_id,
+        recent_limit,
     )
     return {
         "session_begin": session_begin,
         "generated_session_id": generated,
+        "replaced_closed_session_id": replaced_closed_session_id,
         **context,
     }
