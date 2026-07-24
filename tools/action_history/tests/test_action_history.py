@@ -72,7 +72,7 @@ def test_failed_action_is_logged(tmp_path: Path):
     assert "FileNotFoundError" in events[0]["details"]["error"]
 
 
-def test_path_escape_is_rejected_without_fake_success(tmp_path: Path):
+def test_path_escape_is_logged_as_blocked(tmp_path: Path):
     history, ops, _ = make_ops(tmp_path)
     outside = tmp_path / "outside.txt"
     outside.write_text("nope", encoding="utf-8")
@@ -80,7 +80,10 @@ def test_path_escape_is_rejected_without_fake_success(tmp_path: Path):
     with pytest.raises(PermissionError):
         ops.read_text(str(outside), session_id="s4")
 
-    assert history.list_events(session_id="s4") == []
+    events = history.list_events(session_id="s4")
+    assert len(events) == 1
+    assert events[0]["status"] == "blocked"
+    assert events[0]["completeness"] == "aborted"
 
 
 def test_history_tampering_is_detected(tmp_path: Path):
@@ -98,7 +101,7 @@ def test_history_tampering_is_detected(tmp_path: Path):
         history.verify()
 
 
-def test_existing_file_requires_explicit_overwrite(tmp_path: Path):
+def test_existing_file_block_is_logged_and_explicit_overwrite_succeeds(tmp_path: Path):
     history, ops, root = make_ops(tmp_path)
     target = root / "protected.md"
     target.write_text("alt", encoding="utf-8")
@@ -106,7 +109,40 @@ def test_existing_file_requires_explicit_overwrite(tmp_path: Path):
     with pytest.raises(FileExistsError):
         ops.write_text(str(target), "neu", session_id="s6")
 
-    assert history.list_events(session_id="s6") == []
+    blocked = history.list_events(session_id="s6")
+    assert len(blocked) == 1
+    assert blocked[0]["status"] == "blocked"
     overwritten = ops.write_text(str(target), "neu", session_id="s6", overwrite=True)
     assert overwritten["created"] is False
     assert target.read_text(encoding="utf-8") == "neu"
+
+
+def test_new_session_receives_previous_session_context(tmp_path: Path):
+    history, _, _ = make_ops(tmp_path)
+    history.begin_session("old")
+    history.append(action="build", target="x", session_id="old")
+    history.end_session("old")
+
+    startup = history.startup_context(session_id="new")
+    assert startup["current_session_actions"] == []
+    assert startup["previous_session_id"] == "old"
+    assert [event["action"] for event in startup["previous_session_actions"]] == [
+        "session.begin",
+        "build",
+        "session.end",
+    ]
+
+
+def test_begin_and_end_session_are_idempotent(tmp_path: Path):
+    history, _, _ = make_ops(tmp_path)
+    first_begin = history.begin_session("s7")
+    second_begin = history.begin_session("s7")
+    history.append(action="work", session_id="s7")
+    first_end = history.end_session("s7")
+    second_end = history.end_session("s7")
+
+    assert first_begin["created"] is True
+    assert second_begin["created"] is False
+    assert first_end["created"] is True
+    assert second_end["created"] is False
+    assert history.summary(session_id="s7")["event_count"] == 3
