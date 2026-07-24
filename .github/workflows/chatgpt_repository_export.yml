@@ -1,0 +1,36 @@
+name: ChatGPT Repository Export
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Create exact original archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          COMMIT="440179d5aaa52d7a43580661a61e5265815a7971"
+          ARCHIVE="RaDi0n92_Flextrawurst_${COMMIT}.zip"
+          git archive --format=zip --output="$ARCHIVE" "$COMMIT"
+          sha256sum "$ARCHIVE" > "$ARCHIVE.sha256"
+          git show -s --format=fuller "$COMMIT" > ORIGINAL_COMMIT.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Flextrawurst-exact-original-440179d
+          path: |
+            RaDi0n92_Flextrawurst_440179d5aaa52d7a43580661a61e5265815a7971.zip
+            RaDi0n92_Flextrawurst_440179d5aaa52d7a43580661a61e5265815a7971.zip.sha256
+            ORIGINAL_COMMIT.txt
+          compression-level: 0
+          if-no-files-found: error
+          retention-days: 1
