@@ -61,10 +61,25 @@ jobs:
           server = FastMCP("action-history-ci")
           registered = register_action_history_tools(server, history=history, files=files)
 
+          expected = (
+              "history_begin_session",
+              "history_startup",
+              "history_recent",
+              "history_summary",
+              "history_session_report",
+              "history_verify",
+              "history_capabilities",
+              "history_record_action",
+              "history_end_session",
+              "tracked_read_file",
+              "tracked_write_file",
+              "tracked_append_file",
+              "tracked_reread_own_file",
+          )
           actual = tuple(registered)
-          if actual != REQUIRED_TOOLS:
+          if REQUIRED_TOOLS != expected or actual != expected:
               raise SystemExit(
-                  f"Werkzeugvertrag abweichend; erwartet={REQUIRED_TOOLS!r} erhalten={actual!r}"
+                  f"Werkzeugvertrag abweichend; REQUIRED_TOOLS={REQUIRED_TOOLS!r} registriert={actual!r}"
               )
-          print(f"Echter FastMCP hat alle {len(REQUIRED_TOOLS)} Werkzeuge registriert")
+          print(f"Echter FastMCP hat alle {len(expected)} Werkzeuge registriert")
           PY
