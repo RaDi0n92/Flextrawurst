@@ -25,20 +25,35 @@ def main() -> int:
                 f"FastMCP-Werkzeugvertrag abweichend: {tuple(registered)!r}"
             )
 
-        startup = registered["history_startup"]("fastmcp-verification")
-        second = registered["history_startup"]("fastmcp-verification")
-        report = registered["history_end_session"]("fastmcp-verification")
+        startup = registered["history_startup"]()
+        session_id = startup["session_id"]
+        second = registered["history_startup"](session_id)
+        target = root / "_gpt" / "fastmcp-proof.md"
+        registered["tracked_write_file"](
+            str(target),
+            "proof\n",
+            session_id,
+        )
+        registered["tracked_read_file"](str(target), session_id)
+        registered["tracked_reread_own_file"](str(target), session_id)
+        report = registered["history_end_session"](session_id)
 
+        if not startup["generated_session_id"] or session_id == "unknown-session":
+            raise RuntimeError("FastMCP-Start hat keine echte Session-ID erzeugt")
         if not startup["session_begin"]["created"]:
             raise RuntimeError("Erster FastMCP-Sessionstart wurde nicht erzeugt")
         if second["session_begin"]["created"]:
             raise RuntimeError("Zweiter FastMCP-Sessionstart erzeugte ein Duplikat")
         if not report["created"] or not report["report"]["integrity"]["ok"]:
             raise RuntimeError("FastMCP-Sessionabschluss oder Bericht ist ungültig")
+        if report["report"]["event_count"] != 5:
+            raise RuntimeError(
+                f"FastMCP-Gegenprobe erwartete 5 Ereignisse, erhielt {report['report']['event_count']}"
+            )
 
         print(
             f"FASTMCP_VERIFIED tools={len(REQUIRED_TOOLS)} "
-            f"events={report['report']['event_count']}"
+            f"session={session_id} events={report['report']['event_count']}"
         )
     return 0
 
