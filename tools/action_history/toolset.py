@@ -48,10 +48,10 @@ def register_action_history_tools(
         return begin_session_once(active_history, session_id, details=details)
 
     def history_startup(
-        session_id: str = "unknown-session",
+        session_id: str | None = None,
         recent_limit: int = 30,
     ) -> dict[str, Any]:
-        """Eröffnet die Session selbst und liefert aktuelle, vorherige und globale Aktionen."""
+        """Erzeugt bei Bedarf eine Session-ID und liefert aktuelle, vorherige und globale Aktionen."""
         return startup_session(
             active_history,
             session_id=session_id,
@@ -91,7 +91,8 @@ def register_action_history_tools(
             "required_tools": list(REQUIRED_TOOLS),
             "history_path": str(active_history.path),
             "rule": "Alle Dateiaktionen über tracked_*; alle übrigen Aktionen über history_record_action.",
-            "startup_rule": "history_startup eröffnet die Session automatisch, rennsicher und idempotent.",
+            "startup_rule": "history_startup erzeugt bei Bedarf eine echte Session-ID und eröffnet sie rennsicher.",
+            "session_rule": "Die zurückgegebene session_id ist für jede folgende Arbeitsaktion verpflichtend.",
             "report_rule": "history_end_session und history_session_report erzeugen das Fazit aus der Hash-Kette.",
             "integration": "register_action_history_tools(existing_mcp) bindet den Körper in den bestehenden Server ein.",
         }
@@ -106,6 +107,8 @@ def register_action_history_tools(
         parent_event_id: str | None = None,
     ) -> dict[str, Any]:
         """Protokolliert eine Nicht-Dateiaktion eines anderen MCP-Werkzeugs."""
+        if not session_id or session_id == "unknown-session":
+            raise ValueError("Eine echte session_id ist erforderlich")
         return active_history.append(
             action=action,
             target=target,
@@ -126,7 +129,7 @@ def register_action_history_tools(
 
     def tracked_read_file(
         path: str,
-        session_id: str = "unknown-session",
+        session_id: str,
         start_line: int = 1,
         max_lines: int | None = None,
     ) -> dict[str, Any]:
@@ -141,7 +144,7 @@ def register_action_history_tools(
     def tracked_write_file(
         path: str,
         content: str,
-        session_id: str = "unknown-session",
+        session_id: str,
         overwrite: bool = False,
     ) -> dict[str, Any]:
         """Schreibt atomar und protokolliert Pfad, Umfang und Hash."""
@@ -155,14 +158,14 @@ def register_action_history_tools(
     def tracked_append_file(
         path: str,
         content: str,
-        session_id: str = "unknown-session",
+        session_id: str,
     ) -> dict[str, Any]:
         """Hängt Text an und protokolliert die resultierende Datei."""
         return active_files.append_text(path, content, session_id=session_id)
 
     def tracked_reread_own_file(
         path: str,
-        session_id: str = "unknown-session",
+        session_id: str,
     ) -> dict[str, Any]:
         """Liest eine gerade geschriebene Datei vollständig erneut und protokolliert dies separat."""
         return active_files.reread_text(path, session_id=session_id)
