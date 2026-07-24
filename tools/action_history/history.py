@@ -6,6 +6,7 @@ import fcntl
 import hashlib
 import json
 import os
+import tempfile
 import uuid
 from pathlib import Path
 from typing import Any, Iterator
@@ -17,6 +18,7 @@ DEFAULT_HISTORY_PATH = Path(
     )
 )
 DEFAULT_ACTOR = os.environ.get("FLEXTRAWURST_ACTION_ACTOR", "GPT-5.6-sol-hoch")
+CHECKPOINT_VERSION = 1
 
 
 class HistoryIntegrityError(RuntimeError):
@@ -24,15 +26,18 @@ class HistoryIntegrityError(RuntimeError):
 
 
 class ActionHistory:
-    """Append-only, hash-chained action history for AI work streams."""
+    """Append-only, hash-chained action history with an independent atomic tail checkpoint."""
 
     def __init__(self, path: str | Path = DEFAULT_HISTORY_PATH, actor: str = DEFAULT_ACTOR):
         self.path = Path(path)
+        self.checkpoint_path = Path(f"{self.path}.checkpoint.json")
         self.actor = actor
         self.path.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
         if not self.path.exists():
             self.path.touch(mode=0o600)
         os.chmod(self.path, 0o600)
+        if self.checkpoint_path.exists():
+            os.chmod(self.checkpoint_path, 0o600)
 
     @staticmethod
     def _canonical_json(value: dict[str, Any]) -> bytes:
@@ -44,8 +49,8 @@ class ActionHistory:
         ).encode("utf-8")
 
     @classmethod
-    def _calculate_hash(cls, event_without_hash: dict[str, Any]) -> str:
-        return hashlib.sha256(cls._canonical_json(event_without_hash)).hexdigest()
+    def _calculate_hash(cls, value_without_hash: dict[str, Any]) -> str:
+        return hashlib.sha256(cls._canonical_json(value_without_hash)).hexdigest()
 
     def _read_unlocked(self, handle) -> list[dict[str, Any]]:
         handle.seek(0)
@@ -65,12 +70,12 @@ class ActionHistory:
     def _all_events(self) -> list[dict[str, Any]]:
         with self.path.open("r", encoding="utf-8") as handle:
             fcntl.flock(handle.fileno(), fcntl.LOCK_SH)
-            events = self._read_unlocked(handle)
-            fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
-        return events
+            try:
+                return self._read_unlocked(handle)
+            finally:
+                fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
 
-    def verify(self) -> dict[str, Any]:
-        events = self._all_events()
+    def _verify_event_chain(self, events: list[dict[str, Any]]) -> str | None:
         previous_hash: str | None = None
         for index, event in enumerate(events, start=1):
             actual_hash = event.get("event_hash")
@@ -86,12 +91,114 @@ class ActionHistory:
                     f"Kettenfehler bei Ereignis {index} ({event.get('event_id')})"
                 )
             previous_hash = actual_hash
+        return previous_hash
+
+    def _read_checkpoint(self) -> dict[str, Any]:
+        try:
+            checkpoint = json.loads(self.checkpoint_path.read_text(encoding="utf-8"))
+        except FileNotFoundError:
+            raise
+        except json.JSONDecodeError as exc:
+            raise HistoryIntegrityError(f"Ungültiger Checkpoint: {exc}") from exc
+
+        actual_hash = checkpoint.get("checkpoint_hash")
+        payload = dict(checkpoint)
+        payload.pop("checkpoint_hash", None)
+        expected_hash = self._calculate_hash(payload)
+        if actual_hash != expected_hash:
+            raise HistoryIntegrityError("Checkpoint-Hash ist ungültig")
+        if payload.get("checkpoint_version") != CHECKPOINT_VERSION:
+            raise HistoryIntegrityError(
+                f"Unbekannte Checkpoint-Version: {payload.get('checkpoint_version')}"
+            )
+        return checkpoint
+
+    def _verify_checkpoint(
+        self,
+        events: list[dict[str, Any]],
+        last_hash: str | None,
+    ) -> str:
+        if not self.checkpoint_path.exists():
+            if events:
+                raise HistoryIntegrityError(
+                    "Historie enthält Ereignisse, aber der unabhängige Checkpoint fehlt"
+                )
+            return "missing-empty"
+
+        checkpoint = self._read_checkpoint()
+        expected_last_event_id = events[-1].get("event_id") if events else None
+        expected = {
+            "history_path": str(self.path),
+            "event_count": len(events),
+            "last_hash": last_hash,
+            "last_event_id": expected_last_event_id,
+        }
+        for key, expected_value in expected.items():
+            if checkpoint.get(key) != expected_value:
+                raise HistoryIntegrityError(
+                    f"Checkpoint-Abweichung bei {key}: "
+                    f"erwartet={expected_value!r}, gefunden={checkpoint.get(key)!r}"
+                )
+        return "verified"
+
+    def _write_checkpoint(self, event_count: int, last_event: dict[str, Any]) -> None:
+        payload: dict[str, Any] = {
+            "checkpoint_version": CHECKPOINT_VERSION,
+            "history_path": str(self.path),
+            "event_count": event_count,
+            "last_hash": last_event.get("event_hash"),
+            "last_event_id": last_event.get("event_id"),
+            "updated_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+        }
+        payload["checkpoint_hash"] = self._calculate_hash(payload)
+        encoded = (
+            json.dumps(payload, ensure_ascii=False, sort_keys=True) + "\n"
+        ).encode("utf-8")
+
+        fd, temp_path = tempfile.mkstemp(
+            prefix=f".{self.checkpoint_path.name}.",
+            dir=str(self.checkpoint_path.parent),
+        )
+        try:
+            with os.fdopen(fd, "wb") as handle:
+                handle.write(encoded)
+                handle.flush()
+                os.fsync(handle.fileno())
+            os.chmod(temp_path, 0o600)
+            os.replace(temp_path, self.checkpoint_path)
+            os.chmod(self.checkpoint_path, 0o600)
+            directory_fd = os.open(
+                self.checkpoint_path.parent,
+                os.O_RDONLY | getattr(os, "O_DIRECTORY", 0),
+            )
+            try:
+                os.fsync(directory_fd)
+            finally:
+                os.close(directory_fd)
+        except Exception:
+            try:
+                os.unlink(temp_path)
+            except FileNotFoundError:
+                pass
+            raise
+
+    def verify(self) -> dict[str, Any]:
+        with self.path.open("r", encoding="utf-8") as handle:
+            fcntl.flock(handle.fileno(), fcntl.LOCK_SH)
+            try:
+                events = self._read_unlocked(handle)
+                last_hash = self._verify_event_chain(events)
+                checkpoint_status = self._verify_checkpoint(events, last_hash)
+            finally:
+                fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
 
         return {
             "ok": True,
             "events": len(events),
-            "last_hash": previous_hash,
+            "last_hash": last_hash,
             "path": str(self.path),
+            "checkpoint_path": str(self.checkpoint_path),
+            "checkpoint_status": checkpoint_status,
         }
 
     def append(
@@ -122,15 +229,19 @@ class ActionHistory:
 
         with self.path.open("a+", encoding="utf-8") as handle:
             fcntl.flock(handle.fileno(), fcntl.LOCK_EX)
-            events = self._read_unlocked(handle)
-            if events:
-                event["previous_hash"] = events[-1].get("event_hash")
-            event["event_hash"] = self._calculate_hash(event)
-            handle.seek(0, os.SEEK_END)
-            handle.write(json.dumps(event, ensure_ascii=False, sort_keys=True) + "\n")
-            handle.flush()
-            os.fsync(handle.fileno())
-            fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
+            try:
+                events = self._read_unlocked(handle)
+                last_hash = self._verify_event_chain(events)
+                self._verify_checkpoint(events, last_hash)
+                event["previous_hash"] = last_hash
+                event["event_hash"] = self._calculate_hash(event)
+                handle.seek(0, os.SEEK_END)
+                handle.write(json.dumps(event, ensure_ascii=False, sort_keys=True) + "\n")
+                handle.flush()
+                os.fsync(handle.fileno())
+                self._write_checkpoint(len(events) + 1, event)
+            finally:
+                fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
         return event
 
     def list_events(
