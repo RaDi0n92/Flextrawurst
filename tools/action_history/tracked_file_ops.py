@@ -24,7 +24,20 @@ class TrackedFileOps:
         )
         self.allowed_roots = [Path(root).resolve() for root in roots.split(",") if root.strip()]
 
-    def _resolve(self, path: str, *, action: str, session_id: str | None) -> Path:
+    def _require_session(self, session_id: str | None, *, action: str, path: str) -> str:
+        if session_id and session_id != "unknown-session":
+            return session_id
+        self.history.append(
+            action=action,
+            target=str(Path(path).expanduser()),
+            status="blocked",
+            session_id="unassigned",
+            completeness="aborted",
+            details={"reason": "missing_or_unknown_session_id"},
+        )
+        raise ValueError("Eine echte session_id ist für Dateiaktionen erforderlich")
+
+    def _resolve(self, path: str, *, action: str, session_id: str) -> Path:
         candidate = Path(path).expanduser().resolve()
         if not any(candidate == root or root in candidate.parents for root in self.allowed_roots):
             self.history.append(
@@ -45,17 +58,18 @@ class TrackedFileOps:
         self,
         path: str,
         *,
-        session_id: str | None = None,
+        session_id: str,
         start_line: int = 1,
         max_lines: int | None = None,
         action: str = "read_file",
     ) -> dict[str, Any]:
-        target = self._resolve(path, action=action, session_id=session_id)
+        active_session_id = self._require_session(session_id, action=action, path=path)
+        target = self._resolve(path, action=action, session_id=active_session_id)
         completeness = "complete" if start_line == 1 and max_lines is None else "partial"
         with self.history.recorded_action(
             action=action,
             target=str(target),
-            session_id=session_id,
+            session_id=active_session_id,
             completeness=completeness,
             details={"start_line": start_line, "max_lines": max_lines},
         ) as state:
@@ -85,17 +99,18 @@ class TrackedFileOps:
         path: str,
         content: str,
         *,
-        session_id: str | None = None,
+        session_id: str,
         overwrite: bool = False,
         action: str = "write_file",
     ) -> dict[str, Any]:
-        target = self._resolve(path, action=action, session_id=session_id)
+        active_session_id = self._require_session(session_id, action=action, path=path)
+        target = self._resolve(path, action=action, session_id=active_session_id)
         if target.exists() and not overwrite:
             self.history.append(
                 action=action,
                 target=str(target),
                 status="blocked",
-                session_id=session_id,
+                session_id=active_session_id,
                 completeness="aborted",
                 details={"reason": "overwrite_not_explicit"},
             )
@@ -106,7 +121,7 @@ class TrackedFileOps:
         with self.history.recorded_action(
             action=action,
             target=str(target),
-            session_id=session_id,
+            session_id=active_session_id,
             completeness="complete",
             details={"overwrite": overwrite, "old_sha256": old_sha},
         ) as state:
@@ -138,15 +153,16 @@ class TrackedFileOps:
         path: str,
         content: str,
         *,
-        session_id: str | None = None,
+        session_id: str,
         action: str = "append_file",
     ) -> dict[str, Any]:
-        target = self._resolve(path, action=action, session_id=session_id)
+        active_session_id = self._require_session(session_id, action=action, path=path)
+        target = self._resolve(path, action=action, session_id=active_session_id)
         encoded = content.encode("utf-8")
         with self.history.recorded_action(
             action=action,
             target=str(target),
-            session_id=session_id,
+            session_id=active_session_id,
             completeness="complete",
         ) as state:
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -164,7 +180,7 @@ class TrackedFileOps:
             )
             return {"path": str(target), **state}
 
-    def reread_text(self, path: str, *, session_id: str | None = None) -> dict[str, Any]:
+    def reread_text(self, path: str, *, session_id: str) -> dict[str, Any]:
         return self.read_text(
             path,
             session_id=session_id,
