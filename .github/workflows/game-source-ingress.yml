@@ -1,0 +1,27 @@
+name: Game Source Ingress Gegenprobe
+
+on:
+  push:
+    paths:
+      - "tools/game_source_ingress/**"
+      - ".github/workflows/game-source-ingress.yml"
+  pull_request:
+    paths:
+      - "tools/game_source_ingress/**"
+      - ".github/workflows/game-source-ingress.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install pytest
+      - run: python -m compileall -q tools/game_source_ingress
+      - run: python -m pytest -q tools/game_source_ingress/tests
