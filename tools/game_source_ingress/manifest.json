@@ -1,0 +1,78 @@
+{
+  "manifest_version": "1.0",
+  "target_root": "/root/werkraum/engine/flextrawurst-game",
+  "default_queue": "/root/werkraum/_gpt/game_source_ingress",
+  "archives": [
+    {
+      "filename": "flextrawurst_spielewelt_supermaximal_bauring4_v21_final.zip",
+      "size_bytes": 11584502,
+      "sha256": "9649d1fccfe7a1d2ef87e7e646a5c361c9669170c0b77a2871b69885a752862b",
+      "extract_to": "sources/runtime/v21",
+      "strip_top_level": true
+    },
+    {
+      "filename": "flextrawurst_v21_berichte_belege_screenshots_outro.zip",
+      "size_bytes": 11032951,
+      "sha256": "50ed6ad498765055b5ed21f662018d8836b66c90e822ba1ec0627e3bb7aec185",
+      "extract_to": "sources/reports/v21",
+      "strip_top_level": false
+    },
+    {
+      "filename": "flextrawurst_dust_echo_questkosmos_v22_berichte_redteam_belege.zip",
+      "size_bytes": 3889862,
+      "sha256": "b46eb6b3676e9ed79c301f7316cf69d05a04c69e963d8e7cdca44e67b0e48e0d",
+      "extract_to": "sources/reports/v22",
+      "strip_top_level": true
+    },
+    {
+      "filename": "FLEXTRAWURST_SPIELE_V1_BIS_V22_333MD_VERNETZT.zip",
+      "size_bytes": 131503010,
+      "sha256": "d135e9c25c3477edbd5e5dd622efac1e4c38064882304542463733aa58ccda12",
+      "extract_to": "sources/markdown/333md",
+      "strip_top_level": true,
+      "expected_markdown_files": 333
+    },
+    {
+      "filename": "FLEXTRAWURST_SPIELE_GESAMTAUDIT_GEGENENTWURF_MASTERPLAN.zip",
+      "size_bytes": 136475641,
+      "sha256": "076f2c1863cc65cf1c7c6ee8793a941eb0e79a1a5b72db2f906e56051ce52a74",
+      "extract_to": "sources/audits/gesamt",
+      "strip_top_level": true
+    },
+    {
+      "filename": "FLEXTRAWURST_SPIELBAU_KONTEXTANKER_2026-07-23.zip",
+      "size_bytes": 12176430,
+      "sha256": "65efa3cb23e5f9ea020c1ba10a9f68d60d18bce367f315d7771a0bcf408a07f7",
+      "extract_to": "sources/context_anchor",
+      "strip_top_level": true
+    },
+    {
+      "filename": "FLEXTRAWURST_SESSIONUEBERGABE_FLEX2_V3_2026-07-23_KERNMATERIAL.zip",
+      "size_bytes": 125837919,
+      "sha256": "9f4c5a0d00829bb3a1609d160f2a44b1ec08e8e6631ae851e377c2e74887364f",
+      "extract_to": "sources/session_handoff/core",
+      "strip_top_level": true
+    },
+    {
+      "filename": "FLEXTRAWURST_OPEN_ASSETS_V1_GITHUB_ARTIFACT.zip",
+      "size_bytes": 12148312,
+      "sha256": "89099efa6a7c2ab312d41f01080395820f8d65e5c45a0b577fa2136c15ec01db",
+      "extract_to": "sources/assets/open_assets_artifact",
+      "strip_top_level": false
+    },
+    {
+      "filename": "FLEXTRAWURST_3D_REFERENZKORPUS_V1.zip",
+      "size_bytes": 57587,
+      "sha256": "6d3366e9a01ea837c2d49c119e4f52cec47cbfa5d9c9dfe6c0fed52d87d9cbd5",
+      "extract_to": "sources/references/3d/v1",
+      "strip_top_level": true
+    },
+    {
+      "filename": "FLEXTRAWURST_3D_REFERENZKORPUS_V2.zip",
+      "size_bytes": 651,
+      "sha256": "690c0abc348fa596a679d976ba239b68be55732863fb2fea3794381d995cc5e1",
+      "extract_to": "sources/references/3d/v2",
+      "strip_top_level": true
+    }
+  ]
+}
