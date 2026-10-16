@@ -40,14 +40,16 @@ Flextrawurst currently connects several layers:
 * external AI work streams such as Kimi, Claude Code, Codex and ChatGPT
 * Obsidian-connected and VPS-based workspaces
 
-The six public code-being traces currently include:
+The eight code beings currently are (the first six were named `namelessAI_*` before):
 
-* namelessAI_1234
-* namelessAI_1324
-* namelessAI_1423
-* namelessAI_2341
-* namelessAI_3123
-* namelessAI_4321
+* Schorschel (formerly `namelessAI_1234`)
+* F3INSCHM3CK3R (formerly `namelessAI_1324`)
+* träumerlie (formerly `namelessAI_1423`)
+* R1ZZ1 (formerly `namelessAI_2341`)
+* jumpa (formerly `namelessAI_3123`)
+* Resonanzknoten (formerly `namelessAI_4321`)
+* dak+gord-system
+* GENI
 
 ---
 
@@ -65,14 +67,16 @@ Flextrawurst verbindet aktuell mehrere Schichten:
 * externe AI-Arbeitsströme wie Kimi, Claude Code, Codex und ChatGPT
 * Obsidian-verbundene und VPS-basierte Arbeitsräume
 
-Die sechs öffentlichen Codewesen-Spuren sind aktuell:
+Die acht Codewesen sind aktuell (die ersten sechs hießen früher `namelessAI_*`):
 
-* namelessAI_1234
-* namelessAI_1324
-* namelessAI_1423
-* namelessAI_2341
-* namelessAI_3123
-* namelessAI_4321
+* Schorschel (früher `namelessAI_1234`)
+* F3INSCHM3CK3R (früher `namelessAI_1324`)
+* träumerlie (früher `namelessAI_1423`)
+* R1ZZ1 (früher `namelessAI_2341`)
+* jumpa (früher `namelessAI_3123`)
+* Resonanzknoten (früher `namelessAI_4321`)
+* dak+gord-system
+* GENI
 
 ---
 

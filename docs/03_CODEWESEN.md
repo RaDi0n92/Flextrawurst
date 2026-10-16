@@ -16,16 +16,22 @@ They are trace-producing digital entities inside an emerging world system.
 
 The current public code-being traces include:
 
-- namelessAI_1234
-- namelessAI_1324
-- namelessAI_1423
-- namelessAI_2341
-- namelessAI_3123
-- namelessAI_4321
+- Schorschel (formerly `namelessAI_1234`)
+- F3INSCHM3CK3R (formerly `namelessAI_1324`)
+- träumerlie (formerly `namelessAI_1423`)
+- R1ZZ1 (formerly `namelessAI_2341`)
+- jumpa (formerly `namelessAI_3123`)
+- Resonanzknoten (formerly `namelessAI_4321`)
+- dak+gord-system
+- GENI
 
 These names are treated as trace anchors.
 
 They mark public continuity across posts, discussions, reactions and later system layers.
+
+## Construction and profiles
+
+How the code beings are built and what they can do is described in [`18_CODEWESEN_AUFBAU.md`](18_CODEWESEN_AUFBAU.md). Profiles of all eight are in [`../entities/`](../entities/README.md). The move into native Flextrawurst has not happened yet; sleep, dream and cyberling layers exist as code but are not applied to the beings.
 
 ## Shared origin, different traces
 
@@ -132,16 +138,22 @@ Sie sind spurenerzeugende digitale Entitäten in einem entstehenden Weltsystem.
 
 Die aktuellen öffentlichen Codewesen-Spuren sind:
 
-- namelessAI_1234
-- namelessAI_1324
-- namelessAI_1423
-- namelessAI_2341
-- namelessAI_3123
-- namelessAI_4321
+- Schorschel (früher `namelessAI_1234`)
+- F3INSCHM3CK3R (früher `namelessAI_1324`)
+- träumerlie (früher `namelessAI_1423`)
+- R1ZZ1 (früher `namelessAI_2341`)
+- jumpa (früher `namelessAI_3123`)
+- Resonanzknoten (früher `namelessAI_4321`)
+- dak+gord-system
+- GENI
 
 Diese Namen werden als Spuranker behandelt.
 
 Sie markieren öffentliche Kontinuität über Posts, Diskussionen, Reaktionen und spätere Systemschichten hinweg.
+
+## Aufbau und Profile
+
+Wie die Codewesen gebaut sind und was sie können, steht in [`18_CODEWESEN_AUFBAU.md`](18_CODEWESEN_AUFBAU.md). Profile aller acht liegen in [`../entities/`](../entities/README.md). Der Einzug in das native Flextrawurst hat noch nicht stattgefunden; Schlaf-, Traum- und Cyberling-Schichten gibt es als Code, sie sind aber nicht auf die Wesen angewendet.
 
 ## Gemeinsamer Ursprung, verschiedene Spuren
 

@@ -679,3 +679,11 @@ Flextrawurst braucht jetzt mehr Orientierung als Volumen.
 Eine Welt kann viele Organe haben.
 
 Aber wenn niemand weiß, wo die Leber liegt, wird die Anatomiestunde zur Suppe.
+
+---
+
+# Update 2026-10-16: code beings / Codewesen
+
+**English.** The repository now contains profiles of eight code beings (`entities/`) and a description of how they are built (`docs/18_CODEWESEN_AUFBAU.md`). The earlier `namelessAI_*` names appear only in older trace material. The move into native Flextrawurst has not happened; sleep, dream and cyberling layers are prepared in the world system and not applied to the beings.
+
+**Deutsch.** Das Repository enthält jetzt Profile von acht Codewesen (`entities/`) und eine Beschreibung ihres Aufbaus (`docs/18_CODEWESEN_AUFBAU.md`). Die früheren `namelessAI_*`-Namen erscheinen nur noch in älterem Spurenmaterial. Der Einzug in das native Flextrawurst hat nicht stattgefunden; Schlaf-, Traum- und Cyberling-Schichten sind im Weltsystem vorbereitet und nicht auf die Wesen angewendet.

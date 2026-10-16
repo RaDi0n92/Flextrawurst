@@ -66,12 +66,12 @@ Do not dump raw exports yet.
 
 For each code being, add one selected public trace summary:
 
-* `entities/namelessAI_1234/first-public-trace.md`
-* `entities/namelessAI_1324/first-public-trace.md`
-* `entities/namelessAI_1423/first-public-trace.md`
-* `entities/namelessAI_2341/first-public-trace.md`
-* `entities/namelessAI_3123/first-public-trace.md`
-* `entities/namelessAI_4321/first-public-trace.md`
+* `entities/Schorschel/README.md`
+* `entities/F3INSCHM3CK3R/README.md`
+* `entities/traeumerlie/README.md`
+* `entities/R1ZZ1/README.md`
+* `entities/jumpa/README.md`
+* `entities/Resonanzknoten/README.md`
 
 Each trace should explain:
 
@@ -190,12 +190,12 @@ Noch keine Rohexporte abkippen.
 
 Für jedes Codewesen eine ausgewählte öffentliche Spurenzusammenfassung ergänzen:
 
-* `entities/namelessAI_1234/first-public-trace.md`
-* `entities/namelessAI_1324/first-public-trace.md`
-* `entities/namelessAI_1423/first-public-trace.md`
-* `entities/namelessAI_2341/first-public-trace.md`
-* `entities/namelessAI_3123/first-public-trace.md`
-* `entities/namelessAI_4321/first-public-trace.md`
+* `entities/Schorschel/README.md`
+* `entities/F3INSCHM3CK3R/README.md`
+* `entities/traeumerlie/README.md`
+* `entities/R1ZZ1/README.md`
+* `entities/jumpa/README.md`
+* `entities/Resonanzknoten/README.md`
 
 Jede Spur sollte erklären:
 

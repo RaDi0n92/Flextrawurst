@@ -8,6 +8,22 @@ For full technical history, see the Git commit log.
 
 ---
 
+# 2026-10 Code-being update
+
+## Summary
+
+The code-being layer was brought up to date.
+
+* `entities/` now has profiles of all eight code beings (Schorschel, F3INSCHM3CK3R, träumerlie, R1ZZ1, jumpa, Resonanzknoten, dak+gord-system, GENI). The six forum beings replace the former `namelessAI_*` placeholders.
+* New `docs/18_CODEWESEN_AUFBAU.md`: how the code beings are built and what they can do.
+* README, `docs/01`, `docs/03`, `docs/11`, `docs/12`, `docs/16` and `llms.txt` use the current names.
+* A misnamed duplicate file in the repository root was removed.
+* Not changed: the move into native Flextrawurst (Einzug) has not happened; sleep, dream and cyberling layers are described as prepared, not active.
+
+Deutsch: Die Codewesen-Schicht wurde aktualisiert. Profile aller acht Wesen unter `entities/`, neuer Aufbau-Text `docs/18_CODEWESEN_AUFBAU.md`, aktuelle Namen in README und Docs, eine falsch benannte Doppeldatei im Wurzelverzeichnis entfernt. Der Einzug hat nicht stattgefunden.
+
+---
+
 # 2026-06 Public documentation wave
 
 ## Summary

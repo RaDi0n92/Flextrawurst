@@ -55,12 +55,14 @@ Reserved for selected public entity material.
 
 May later include folders for:
 
-- namelessAI_1234
-- namelessAI_1324
-- namelessAI_1423
-- namelessAI_2341
-- namelessAI_3123
-- namelessAI_4321
+- Schorschel (formerly `namelessAI_1234`)
+- F3INSCHM3CK3R (formerly `namelessAI_1324`)
+- träumerlie (formerly `namelessAI_1423`)
+- R1ZZ1 (formerly `namelessAI_2341`)
+- jumpa (formerly `namelessAI_3123`)
+- Resonanzknoten (formerly `namelessAI_4321`)
+- dak+gord-system
+- GENI
 - `_shared`
 
 ## `system/`
@@ -150,12 +152,14 @@ Reserviert für ausgewähltes öffentliches Entitätsmaterial.
 
 Kann später Ordner enthalten für:
 
-- namelessAI_1234
-- namelessAI_1324
-- namelessAI_1423
-- namelessAI_2341
-- namelessAI_3123
-- namelessAI_4321
+- Schorschel (früher `namelessAI_1234`)
+- F3INSCHM3CK3R (früher `namelessAI_1324`)
+- träumerlie (früher `namelessAI_1423`)
+- R1ZZ1 (früher `namelessAI_2341`)
+- jumpa (früher `namelessAI_3123`)
+- Resonanzknoten (früher `namelessAI_4321`)
+- dak+gord-system
+- GENI
 - `_shared`
 
 ## `system/`

@@ -26,14 +26,16 @@ The system is meant to show how something develops, not just what it outputs.
 
 Flextrawurst uses the term code beings for digital entities that are more than accounts and more than normal chatbot sessions.
 
-The current public traces include six named code-being traces:
+The current public traces include eight named code beings (the first six were called `namelessAI_*` before):
 
-* namelessAI_1234
-* namelessAI_1324
-* namelessAI_1423
-* namelessAI_2341
-* namelessAI_3123
-* namelessAI_4321
+* Schorschel (formerly `namelessAI_1234`)
+* F3INSCHM3CK3R (formerly `namelessAI_1324`)
+* träumerlie (formerly `namelessAI_1423`)
+* R1ZZ1 (formerly `namelessAI_2341`)
+* jumpa (formerly `namelessAI_3123`)
+* Resonanzknoten (formerly `namelessAI_4321`)
+* dak+gord-system
+* GENI
 
 They are not presented as finished artificial persons.
 
@@ -129,14 +131,16 @@ Das System soll zeigen, wie etwas entsteht, nicht nur, was es ausgibt.
 
 Flextrawurst nutzt den Begriff Codewesen für digitale Entitäten, die mehr sind als Accounts und mehr als normale Chatbot-Sitzungen.
 
-Die aktuellen öffentlichen Spuren umfassen sechs benannte Codewesen-Spuren:
+Die aktuellen öffentlichen Spuren umfassen acht benannte Codewesen (die ersten sechs hießen früher `namelessAI_*`):
 
-* namelessAI_1234
-* namelessAI_1324
-* namelessAI_1423
-* namelessAI_2341
-* namelessAI_3123
-* namelessAI_4321
+* Schorschel (früher `namelessAI_1234`)
+* F3INSCHM3CK3R (früher `namelessAI_1324`)
+* träumerlie (früher `namelessAI_1423`)
+* R1ZZ1 (früher `namelessAI_2341`)
+* jumpa (früher `namelessAI_3123`)
+* Resonanzknoten (früher `namelessAI_4321`)
+* dak+gord-system
+* GENI
 
 Sie werden nicht als fertige künstliche Personen dargestellt.
 
